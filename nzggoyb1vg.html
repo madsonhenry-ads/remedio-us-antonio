@@ -1,0 +1,424 @@
+<!DOCTYPE html><html><head>
+<meta charset="utf-8"><script data-ec-canonical-guard="">(function(){
+try{
+  var TAG='data-ec-canonical-guard';
+  function isForeignRefresh(node){
+    try{
+      if(!node||node.nodeType!==1||String(node.tagName).toUpperCase()!=='META')return false;
+      var equiv=node.getAttribute('http-equiv');
+      if(!equiv||equiv.toLowerCase()!=='refresh')return false;
+      var content=node.getAttribute('content')||'';
+      var match=content.match(/url\s*=\s*(.+)$/i);
+      if(!match)return false;
+      var target=match[1].trim().replace(/^["']|["']$/g,'');
+      var url=new URL(target,location.href);
+      return url.host!==location.host;
+    }catch(e){return false;}
+  }
+  // append aceita N nós: dá para filtrar a lista e inserir o resto
+  function guardVariadic(proto,name){
+    var original=proto[name];
+    if(typeof original!=='function')return;
+    proto[name]=function(){
+      var args=[];
+      for(var i=0;i<arguments.length;i++){
+        if(!isForeignRefresh(arguments[i]))args.push(arguments[i]);
+      }
+      if(args.length===0)return;
+      return original.apply(this,args);
+    };
+  }
+  // appendChild(node) e insertBefore(node,ref) têm aridade fixa: filtrar a
+  // lista quebraria a chamada, então o nó ruim é descartado inteiro e
+  // devolvido como se tivesse entrado (é o que o chamador espera de volta)
+  function guardNodeFirst(proto,name){
+    var original=proto[name];
+    if(typeof original!=='function')return;
+    proto[name]=function(node){
+      if(isForeignRefresh(node))return node;
+      return original.apply(this,arguments);
+    };
+  }
+  // Element.prototype cobre head e body; o Hostinger usa document.head.append
+  guardVariadic(Element.prototype,'append');
+  guardNodeFirst(Element.prototype,'appendChild');
+  guardNodeFirst(Element.prototype,'insertBefore');
+
+  function sweep(root){
+    if(!root||!root.querySelectorAll)return;
+    var metas=root.querySelectorAll('meta[http-equiv]');
+    for(var i=0;i<metas.length;i++){
+      if(isForeignRefresh(metas[i])){metas[i].parentNode&&metas[i].parentNode.removeChild(metas[i]);}
+    }
+  }
+  sweep(document);
+  if(typeof MutationObserver==='function'){
+    new MutationObserver(function(records){
+      for(var i=0;i<records.length;i++){
+        var added=records[i].addedNodes;
+        for(var j=0;j<added.length;j++){
+          var node=added[j];
+          if(isForeignRefresh(node)){node.parentNode&&node.parentNode.removeChild(node);}
+          else if(node&&node.nodeType===1){sweep(node);}
+        }
+      }
+    }).observe(document.documentElement,{childList:true,subtree:true});
+  }
+  document.documentElement.setAttribute(TAG,'1');
+}catch(e){}
+})();</script>
+<meta content="width=device-width, user-scalable=no" name="viewport">
+<meta content="noindex" name="robots">
+<meta content="noindex,indexifembedded" name="googlebot">
+<title>09. FHA - VSL_HORIZONTAL_BRAIN BOOSTER_fara quiz_small_thumbnailNicole</title>
+<link rel="alternate" type="application/json+oembed" href="https://fast.wistia.com/oembed.json?url=https%3A%2F%2Ffast.wistia.com%2Fembed%2Fiframe%2Fnzggoyb1vg" title="09. FHA - VSL_HORIZONTAL_BRAIN BOOSTER_fara quiz_small_thumbnailNicole">
+<meta name="twitter:card" content="player">
+<meta name="twitter:site" content="@wistia">
+<meta name="twitter:title" content="09. FHA - VSL_HORIZONTAL_BRAIN BOOSTER_fara quiz_small_thumbnailNicole">
+<meta name="twitter:url" content="https://fast.wistia.net/embed/iframe/nzggoyb1vg?twitter=true">
+<meta name="twitter:description" content="31 min 10 sec video">
+<meta name="twitter:image" content="https://embed-ssl.wistia.com/deliveries/c7cbfd270224caa58d6727aef97a020c/file.">
+<meta name="twitter:player" content="https://fast.wistia.net/embed/iframe/nzggoyb1vg?twitter=true">
+<meta name="twitter:player:width" content="435">
+<meta name="twitter:player:height" content="245">
+
+<script>
+  window._inWistiaIframe = true;
+</script>
+<style>
+  html, body {margin:0;padding:0;overflow:hidden;height:100%;}
+  object {border:0;}
+  #wistia_video,.wistia_embed {height:100%;width:100%;}
+</style>
+<script data-ec-patch="">(function(){
+var P=[];
+var A=[{"s":"[data-ec-el=\"e3311\"]","v":"\u003cspan style=\"font-weight:400\">© All Rights Reserved\u003c/span>","k":"html"},{"s":"[data-ec-el=\"e200\"]","v":"\u003cspan style=\"font-family:Poppins, sans-serif\">She then went on to survive for 57 days straight alone in the wild with little more than the plants that she found there.\u003c/span>","k":"html"},{"s":"[data-ec-el=\"e860\"]","v":"\u003cstrong>Young Heart Elixir\u003c/strong> – Helps Strengthen the Heart Muscle and Support a Steady, Calm Pulse","k":"html"},{"s":"[data-ec-el=\"e960\"]","v":"\u003cstrong>The “Freezing” Sugar for Regulating Insulin\u003c/strong> – Helps Stabilize Blood Sugar and Reduce Energy Crashes Naturally","k":"html"},{"s":"[data-ec-el=\"e962\"]","v":"\u003cstrong>Spiced Milk for Pancreas\u003c/strong> – Supports the Pancreatic Function and Healthy Insulin Response","k":"html"},{"s":"[data-ec-el=\"e1664\"]","v":"\u003cstrong>Colon Sweep Serum\u003c/strong> – Clears Waste Buildup and Helps Relieve Bloating and Sluggish Digestion","k":"html"},{"s":"[data-ec-el=\"e1945\"]","v":"\u003cspan>High Demand! Limited Number of Books Available - Act Fast! Sale Ends Soon! 78% Discount! 3 FREE BONUS Books + FREE Herbal Medicine Video Collection! \u003c/span>\u003cspan>High Demand! Limited Number of Books Available - Act Fast! Sale Ends Soon! 78% Discount! 3 FREE BONUS Books + FREE Herbal Medicine Video Collection!\u003c/span>","k":"html"},{"s":"[data-ec-el=\"e3301\"]","v":"\u003cspan style=\"font-weight:400\">For Product Support, please contact the vendor at support@forgottenhomeapothecary.com\u003c/span>","k":"html"},{"s":"[data-ec-el=\"e3305\"]","v":"\u003cspan style=\"color:rgb(255 255 255 / 1)\">\u003cspan style=\"font-family:Poppins, sans-serif\">\u003cspan style=\"font-weight:400\">Mailing Address: 2515 Waukegan Rd, Bannockburn, IL, 60015\u003c/span>\u003c/span>\u003c/span>","k":"html"},{"s":"[data-ec-el=\"e3306\"]","v":"\u003cspan style=\"font-family:Poppins, sans-serif\">\u003cspan style=\"font-weight:400\">Mailing Address: 2515 Waukegan Rd, Bannockburn, IL, 60015\u003c/span>\u003c/span>","k":"html"},{"s":"[data-ec-el=\"e3307\"]","v":"\u003cspan style=\"font-weight:400\">Mailing Address: 2515 Waukegan Rd, Bannockburn, IL, 60015\u003c/span>","k":"html"},{"s":"[data-ec-el=\"e3309\"]","v":"\u003cspan style=\"color:rgb(255 255 255 / 1)\">\u003cspan style=\"font-family:Poppins, sans-serif\">\u003cspan style=\"font-weight:400\">© All Rights Reserved\u003c/span>\u003c/span>\u003c/span>","k":"html"},{"s":"[data-ec-el=\"e3310\"]","v":"\u003cspan style=\"font-family:Poppins, sans-serif\">\u003cspan style=\"font-weight:400\">© All Rights Reserved\u003c/span>\u003c/span>","k":"html"}];
+var CSS="";
+var texts=P.filter(function(p){return p.t==="text"});
+var images=P.filter(function(p){return p.t==="image"});
+// Ressurreição de carimbos: quando a hidratação descarta o DOM do servidor
+// (Next App Router re-renderiza a partir do flight payload), os elementos
+// novos NASCEM SEM data-ec-el — todo patch ancorado (css/text-el/image-el)
+// deixa de casar. No primeiro sweep (DOM do servidor intacto) gravamos o
+// caminho estrutural de cada elemento carimbado; depois do wipe, re-achamos
+// o elemento pelo caminho e devolvemos o carimbo.
+var STAMPS={};
+var TRACKED=[];
+(function(){
+  for(var i=0;i<A.length;i++){var s=A[i].s.match(/^\[data-ec-el="([^"]+)"\]$/);
+    if(s&&TRACKED.indexOf(s[1])===-1){TRACKED.push(s[1]);}
+  }
+  var re=/\[data-ec-el="([^"]+)"\]/g;var m;
+  while((m=re.exec(CSS))){if(TRACKED.indexOf(m[1])===-1){TRACKED.push(m[1]);}}
+})();
+function isOurs(el){
+  return el.hasAttribute("data-ec-banner")||el.hasAttribute("data-ec-banner-spacer");
+}
+function pathFor(el){
+  var path=[];var node=el;
+  while(node&&node.parentElement&&node.tagName!=="BODY"){
+    var idx=1;var sib=node.previousElementSibling;
+    while(sib){if(sib.tagName===node.tagName&&!isOurs(sib)){idx++;}sib=sib.previousElementSibling;}
+    path.unshift(node.tagName+"|"+idx);
+    node=node.parentElement;
+  }
+  if(!node||node.tagName!=="BODY"){return null;}
+  return path;
+}
+function findByPath(path){
+  var node=document.body;
+  for(var i=0;i<path.length&&node;i++){
+    var parts=path[i].split("|");var tag=parts[0];var want=+parts[1];
+    var count=0;var child=node.firstElementChild;var hit=null;
+    while(child){
+      if(child.tagName===tag&&!isOurs(child)){count++;if(count===want){hit=child;break;}}
+      child=child.nextElementSibling;
+    }
+    node=hit;
+  }
+  return node;
+}
+function keepStamps(){
+  if(!document.body){return;}
+  for(var i=0;i<TRACKED.length;i++){var st=TRACKED[i];
+    var el=null;
+    try{el=document.querySelector('[data-ec-el="'+st+'"]');}catch(e){continue;}
+    if(el){if(!STAMPS[st]){STAMPS[st]=pathFor(el);}continue;}
+    var path=STAMPS[st];
+    if(!path){continue;}
+    var found=findByPath(path);
+    if(found){found.setAttribute("data-ec-el",st);}
+  }
+}
+function patchString(s){
+  for(var i=0;i<texts.length;i++){var p=texts[i];
+    if(s.indexOf(p.o)!==-1&&s.indexOf(p.v)===-1){s=s.split(p.o).join(p.v);}
+  }
+  return s;
+}
+function fixText(node){
+  var next=patchString(node.nodeValue||"");
+  if(next!==node.nodeValue){node.nodeValue=next;}
+}
+function fixMedia(el){
+  var attrs=["src","srcset","poster"];
+  for(var a=0;a<attrs.length;a++){var cur=el.getAttribute(attrs[a]);
+    if(!cur){continue;}
+    var next=cur;
+    for(var i=0;i<images.length;i++){var p=images[i];
+      if(next.indexOf(p.o)!==-1&&next.indexOf(p.v)===-1){next=next.split(p.o).join(p.v);}
+    }
+    if(next!==cur){el.setAttribute(attrs[a],next);}
+  }
+}
+function fixAnchored(){
+  for(var i=0;i<A.length;i++){var p=A[i];
+    var els;try{els=document.querySelectorAll(p.s);}catch(e){continue;}
+    for(var j=0;j<els.length;j++){var el=els[j];
+      if(p.k==="text"){
+        // mesma representação do servidor: \n vira <br> (em HTML o \n colapsa
+        // em espaço e a quebra que o usuário vê no canvas se perderia). Tudo é
+        // escapado antes, então <br> é o único markup possível.
+        var vh=(p.v||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\r?\n/g,"<br>");
+        var hasEl=false;
+        for(var c=0;c<el.childNodes.length;c++){if(el.childNodes[c].nodeType===1){hasEl=true;break;}}
+        if(vh.indexOf("<br>")>=0){
+          if(el.innerHTML!==vh){el.innerHTML=vh;}
+        }else if(hasEl){
+          // botão com ícone: textContent apagaria o filho. Troca só os nós de
+          // texto, preservando o espaçamento — sem ele o texto cola no ícone.
+          var put=false;
+          for(var c2=0;c2<el.childNodes.length;c2++){
+            var tn=el.childNodes[c2];
+            if(tn.nodeType!==3){continue;}
+            if(put){if(tn.nodeValue!==""){tn.nodeValue="";}continue;}
+            put=true;
+            var lead=(tn.nodeValue.match(/^\s*/)||[""])[0];
+            var tail=(tn.nodeValue.match(/\s*$/)||[""])[0];
+            var want=lead+p.v+tail;
+            if(tn.nodeValue!==want){tn.nodeValue=want;}
+          }
+          if(!put){el.insertBefore(document.createTextNode(p.v),el.firstChild);}
+        }else if(el.textContent!==p.v){el.textContent=p.v;}
+        // Bloco fatiado por LINHA num site que hidrata (Nuxt/Vue): o framework
+        // REPOPULA as linhas irmãs a partir do payload dele, desfazendo a
+        // limpeza feita no servidor — o trecho reaparece duplicado. Aqui a
+        // limpeza é reafirmada a cada sweep, junto com o aria-label (de onde o
+        // componente de split-text do site re-fatia).
+        if((el.getAttribute("class")||"").split(/\s+/).indexOf("line")>=0){
+          var mask=el.parentElement;var grp=mask?mask.parentElement:null;
+          if(grp){
+            var nv=(p.v||"").replace(/\s+/g," ").replace(/^ | $/g,"").toLowerCase();
+            var others=grp.querySelectorAll(".line");
+            for(var q=0;q<others.length;q++){
+              var o=others[q];if(o===el)continue;
+              var ot=(o.textContent||"").replace(/\s+/g," ").replace(/^ | $/g,"").toLowerCase();
+              if(ot!==""&&nv.indexOf(ot)>=0){o.textContent="";}
+            }
+            var hostAria=el.closest?el.closest("[aria-label]"):null;
+            if(hostAria&&hostAria!==el){
+              var av=(p.v||"").replace(/\s+/g," ").replace(/^ | $/g,"");
+              if(hostAria.getAttribute("aria-label")!==av){hostAria.setAttribute("aria-label",av);}
+            }
+          }
+        }
+        continue;
+      }
+      if(p.k==="href"){
+        // só reescreve link que existe: o servidor já aplicou, aqui é o
+        // enforcement contra a hidratação, que devolve o href do payload
+        if(el.hasAttribute("href")&&el.getAttribute("href")!==p.v){
+          el.setAttribute("href",p.v);
+        }
+        continue;
+      }
+      if(p.k==="html"){
+        // conteúdo com markup (palavra pintada). NÃO reescreve container de
+        // split-text já re-fatiado: o split shim é a autoridade lá dentro e
+        // sobrescrever aqui mataria a animação recém-criada.
+        if(el.querySelector(".char")||el.querySelector(".line")){continue;}
+        if(el.innerHTML!==p.v){el.innerHTML=p.v;}
+        continue;
+      }
+      if(el.getAttribute("src")!==p.v){el.setAttribute("src",p.v);}
+      if(el.hasAttribute("data-src")&&el.getAttribute("data-src")!==p.v){el.setAttribute("data-src",p.v);}
+      if(el.hasAttribute("srcset")){el.removeAttribute("srcset");}
+      if(el.hasAttribute("data-srcset")){el.removeAttribute("data-srcset");}
+      if(el.hasAttribute("sizes")){el.removeAttribute("sizes");}
+      var par=el.parentElement;
+      if(par&&par.tagName==="PICTURE"){
+        var srcs=par.querySelectorAll("source");
+        for(var k=0;k<srcs.length;k++){srcs[k].parentNode.removeChild(srcs[k]);}
+      }
+    }
+  }
+}
+function ensureCss(){
+  if(CSS===""){return;}
+  if(document.querySelector("style[data-ec-patch]")){return;}
+  var st=document.createElement("style");
+  st.setAttribute("data-ec-patch","");
+  st.textContent=CSS;
+  (document.head||document.documentElement).appendChild(st);
+}
+function sweep(){
+  keepStamps();
+  ensureCss();
+  var root=document.body||document.documentElement;
+  if(!root){return;}
+  if(texts.length>0){
+    var walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);
+    var node;while((node=walker.nextNode())){fixText(node);}
+    var t=document.querySelector("title");if(t&&t.firstChild){fixText(t.firstChild);}
+  }
+  if(images.length>0){
+    var els=root.querySelectorAll("img,source,video");
+    for(var i=0;i<els.length;i++){fixMedia(els[i]);}
+  }
+  if(A.length>0){fixAnchored();}
+}
+var scheduled=false;
+function schedule(){
+  if(scheduled){return;}
+  scheduled=true;
+  setTimeout(function(){scheduled=false;sweep();},0);
+}
+try{
+  new MutationObserver(schedule).observe(document.documentElement,{
+    subtree:true,childList:true,characterData:true,
+    attributes:true,attributeFilter:["src","srcset","poster","href"]
+  });
+}catch(e){}
+if(document.readyState==="loading"){
+  document.addEventListener("DOMContentLoaded",sweep);
+}else{sweep();}
+})();</script></head>
+<body><div data-ec-banner-spacer="" aria-hidden="true" style="height:50px;flex-shrink:0"></div>
+<script>
+  function addWindowListener (type, callback) {
+    if (window.addEventListener) {
+      window.addEventListener(type, callback, false);
+    } else if (window.attachEvent) {
+      window.attachEvent('on' + type, callback);
+    }
+  }
+  
+  window.wistiaPostMessageQueue = [];
+  addWindowListener('message', function (event) {
+    if (!window._wistiaHasInitialized) {
+      wistiaPostMessageQueue.push(event);
+    }
+  });
+</script>
+<link as="script" crossorigin="anonymous" href="js/insideIframe.js" rel="modulepreload">
+<script async="" src="js/E-v1.js"></script>
+<div class="wistia_embed" id="wistia_video"></div>
+<script>
+  const swatchPreference =  true;
+  if (swatchPreference) {
+    document.getElementById('wistia_video').innerHTML = '<div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"><img src="https://fast.wistia.net/embed/medias/nzggoyb1vg/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" /></div>';
+  }
+</script>
+<script>
+  window._wq = window._wq || [];
+  window._wq.push(function (W) {
+    W.iframeInit({"accountId":707457,"accountHashedId":"zgmxjbxp3c","accountKey":"wistia-production_707457","analyticsHost":"https://distillery.wistia.net","formsHost":"https://app.wistia.com","formEventsApi":"/form-stream/1.0.0","aspectRatio":1.7777777777777777,"assets":[{"is_enhanced":false,"type":"original","slug":"original","display_name":"Original File","details":{},"width":1920,"height":1080,"size":519080582,"bitrate":2167,"public":true,"status":2,"progress":1.0,"metadata":{"av_stream_metadata":"{\"FastStart\":true,\"Audio\":{\"bitRate\":317372,\"channels\":2,\"channelLayout\":\"stereo\",\"Codec ID\":\"mp4a-40-2\",\"codec\":\"aac\",\"codecType\":\"audio\",\"duration\":1870.785583,\"sampleFormat\":\"fltp\",\"sampleRate\":48000},\"Video\":{\"bitRate\":1869990,\"Codec ID\":\"avc1\",\"codec\":\"h264\",\"duration\":1870.785583,\"height\":1080,\"pixelFormat\":\"yuv420p\",\"rFrameRate\":\"24000/1001\",\"width\":1920}}"},"url":"https://embed-ssl.wistia.com/deliveries/2239ce0db6b74bfd69155c53380c978a.bin","created_at":1737741733},{"is_enhanced":false,"type":"iphone_video","slug":"mp4_h264_648k","display_name":"360p","details":{},"container":"mp4","codec":"h264","width":640,"height":360,"ext":"mp4","size":155279645,"bitrate":648,"public":true,"status":2,"progress":1.0,"metadata":{"max_bitrate":1409272,"average_bitrate":664016,"early_max_bitrate":649784,"av_stream_metadata":"{\"Audio\":{\"channels\":2,\"channelLayout\":\"stereo\",\"Codec ID\":\"mp4a-40-2\",\"codec\":\"aac\",\"codecType\":\"audio\",\"duration\":1870.789,\"frameRate\":43.066,\"sampleFormat\":\"fltp\",\"sampleRate\":44100},\"Video\":{\"avgFrameRate\":\"24/1\",\"bitRate\":\"532048\",\"Codec ID\":\"avc1\",\"codec\":\"h264\",\"duration\":1870.792,\"height\":360,\"frameRate\":24,\"frameRateMode\":\"CFR\",\"pixelFormat\":\"yuv420p\",\"rFrameRate\":\"24/1\",\"width\":640}}","built_by":"render-pipeline","time_to_ready":78.602243778},"url":"https://embed-ssl.wistia.com/deliveries/19ae8c8a0f27d68e0ceab36a9bd9bfdbb44239a9.bin","created_at":1737741733,"segment_duration":3,"opt_vbitrate":1200},{"is_enhanced":false,"type":"mp4_video","slug":"mp4_h264_344k","display_name":"224p","details":{},"container":"mp4","codec":"h264","width":400,"height":224,"ext":"mp4","size":82402796,"bitrate":344,"public":true,"status":2,"progress":1.0,"metadata":{"max_bitrate":482312,"average_bitrate":352373,"early_max_bitrate":368064,"av_stream_metadata":"{\"Audio\":{\"channels\":2,\"channelLayout\":\"stereo\",\"Codec ID\":\"mp4a-40-2\",\"codec\":\"aac\",\"codecType\":\"audio\",\"duration\":1870.806,\"frameRate\":43.066,\"sampleFormat\":\"fltp\",\"sampleRate\":44100},\"Video\":{\"avgFrameRate\":\"1199/50\",\"bitRate\":\"218421\",\"Codec ID\":\"avc1\",\"codec\":\"h264\",\"colorSpace\":\"bt709\",\"duration\":1870.768,\"height\":224,\"frameRate\":23.976,\"frameRateMode\":\"CFR\",\"pixelFormat\":\"yuv420p\",\"rFrameRate\":\"1199/50\",\"width\":400}}","time_to_ready":495.301813194},"url":"https://embed-ssl.wistia.com/deliveries/36aa8dbc3077890624762a6e171acff6ddbe4c9c.bin","created_at":1737741733,"segment_duration":3,"opt_vbitrate":300},{"is_enhanced":false,"type":"md_mp4_video","slug":"mp4_h264_1134k","display_name":"540p","details":{},"container":"mp4","codec":"h264","width":960,"height":540,"ext":"mp4","size":271742771,"bitrate":1134,"public":true,"status":2,"progress":1.0,"metadata":{"max_bitrate":2213448,"average_bitrate":1162035,"early_max_bitrate":1110120,"av_stream_metadata":"{\"Audio\":{\"channels\":2,\"channelLayout\":\"stereo\",\"Codec ID\":\"mp4a-40-2\",\"codec\":\"aac\",\"codecType\":\"audio\",\"duration\":1870.806,\"frameRate\":43.066,\"sampleFormat\":\"fltp\",\"sampleRate\":44100},\"Video\":{\"avgFrameRate\":\"1199/50\",\"bitRate\":\"1028035\",\"Codec ID\":\"avc1\",\"codec\":\"h264\",\"colorSpace\":\"bt709\",\"duration\":1870.768,\"height\":540,\"frameRate\":23.976,\"frameRateMode\":\"CFR\",\"pixelFormat\":\"yuv420p\",\"rFrameRate\":\"1199/50\",\"width\":960}}","time_to_ready":1128.448064618},"url":"https://embed-ssl.wistia.com/deliveries/8b5ac0aa1a64ad7b5fb7291e6630441793c73364.bin","created_at":1737741733,"segment_duration":3,"opt_vbitrate":1800},{"is_enhanced":false,"type":"hd_mp4_video","slug":"mp4_h264_1764k","display_name":"720p","details":{},"container":"mp4","codec":"h264","width":1280,"height":720,"ext":"mp4","size":422503588,"bitrate":1764,"public":true,"status":2,"progress":1.0,"metadata":{"max_bitrate":4320064,"average_bitrate":1806724,"early_max_bitrate":1646184,"av_stream_metadata":"{\"Audio\":{\"channels\":2,\"channelLayout\":\"stereo\",\"Codec ID\":\"mp4a-40-2\",\"codec\":\"aac\",\"codecType\":\"audio\",\"duration\":1870.806,\"frameRate\":43.066,\"sampleFormat\":\"fltp\",\"sampleRate\":44100},\"Video\":{\"avgFrameRate\":\"1199/50\",\"bitRate\":\"1672709\",\"Codec ID\":\"avc1\",\"codec\":\"h264\",\"colorSpace\":\"bt709\",\"duration\":1870.768,\"height\":720,\"frameRate\":23.976,\"frameRateMode\":\"CFR\",\"pixelFormat\":\"yuv420p\",\"rFrameRate\":\"1199/50\",\"width\":1280}}","time_to_ready":1794.76042476},"url":"https://embed-ssl.wistia.com/deliveries/3240e572fab71acd19aeb2def7dc696b009d7e38.bin","created_at":1737741733,"segment_duration":3,"opt_vbitrate":3750},{"is_enhanced":false,"type":"hd_mp4_video","slug":"mp4_h264_2668k","display_name":"1080p","details":{},"container":"mp4","codec":"h264","width":1920,"height":1080,"ext":"mp4","size":639096323,"bitrate":2668,"public":true,"status":2,"progress":1.0,"metadata":{"max_bitrate":6040984,"average_bitrate":2732944,"early_max_bitrate":2850912,"av_stream_metadata":"{\"Audio\":{\"channels\":2,\"channelLayout\":\"stereo\",\"Codec ID\":\"mp4a-40-2\",\"codec\":\"aac\",\"codecType\":\"audio\",\"duration\":1870.789,\"frameRate\":43.066,\"sampleFormat\":\"fltp\",\"sampleRate\":44100},\"Video\":{\"avgFrameRate\":\"24/1\",\"bitRate\":\"2601076\",\"Codec ID\":\"avc1\",\"codec\":\"h264\",\"duration\":1870.792,\"height\":1080,\"frameRate\":24,\"frameRateMode\":\"CFR\",\"pixelFormat\":\"yuv420p\",\"rFrameRate\":\"24/1\",\"width\":1920}}","built_by":"render-pipeline","time_to_ready":106.070212862},"url":"https://embed-ssl.wistia.com/deliveries/46b52710daa4bde734f39eae3439581efc4cc483.bin","created_at":1737741733,"segment_duration":3,"opt_vbitrate":5625},{"is_enhanced":false,"type":"storyboard","slug":"storyboard_2000x2260","display_name":"Storyboard","details":{},"width":2000,"height":2260,"ext":"jpg","size":971489,"bitrate":0,"public":true,"status":2,"progress":1.0,"metadata":{"frame_count":200,"aspect_ratio":1.7777777777777777,"frame_height":113,"frame_width":200,"time_to_ready":223.465820685},"url":"https://embed-ssl.wistia.com/deliveries/7323471e498ebd26a3c79e930045700af1afcaa4.bin","created_at":1737741733},{"is_enhanced":false,"type":"still_image","slug":"still_image_1920x1080","display_name":"Thumbnail Image","details":{},"width":1920,"height":1080,"size":3180848,"bitrate":0,"public":true,"status":2,"progress":1.0,"metadata":{"av_stream_metadata":"{\"FastStart\":false,\"Audio\":{},\"Video\":{\"codec\":\"png\",\"colorSpace\":\"gbr\",\"height\":1080,\"pixelFormat\":\"rgb24\",\"rFrameRate\":\"25/1\",\"width\":1920}}"},"url":"https://embed-ssl.wistia.com/deliveries/c7cbfd270224caa58d6727aef97a020c.bin","created_at":1737742069}],"branding":false,"createdAt":1737741733,"distilleryUrl":"https://distillery.wistia.com/x","duration":1870.79,"enableCustomerLogo":true,"firstEmbedForAccount":false,"firstShareForAccount":false,"availableTranscripts":[{"bcp47LanguageTag":"en","familyName":"English","familyNativeName":"English","hasCaptions":true,"hasVideoStream":false,"name":"English","nativeName":"English","wistiaLanguageCode":"eng","language":"eng","ietf_language_tag":"eng","alpha3_terminologic":"eng","alpha3_bibliographic":"eng","iso639_2_language_code":"en","english_name":"English","native_name":"English","right_to_left":false,"alpha3Bibliographic":"eng","alpha3Terminologic":"eng","ietfLanguageTag":"eng","iso6392LanguageCode":"en","genericName":"English","genericNativeName":"English"}],"hashedId":"nzggoyb1vg","mediaId":129370626,"mediaKey":"wistia-production_129370626","mediaType":"Video","name":"09. FHA - VSL_HORIZONTAL_BRAIN BOOSTER_fara quiz_small_thumbnailNicole","preloadPreference":"","progress":1.0,"protected":false,"projectId":9360688,"seoDescription":"a Forgotten Home Apothecary US video","showAbout":true,"status":2,"type":"Video","playableWithoutInstantHls":true,"stats":{"loadCount":12028451,"playCount":101924,"uniqueLoadCount":6388271,"uniquePlayCount":96043,"averageEngagement":0.103926},"trackingTransmitInterval":62,"liveStreamEventDetails":null,"integrations":{"google_analytics4":true},"tagManager":true,"captions":[{"language":"eng","text":"I think you'll be thrilled to discover what is probably the most powerful brain booster you can make at home from a plant that you probably have in your pantry right now. I suffer from multiple sclerosis, a condition that affects my brain and my spinal cord and caused a wide range of symptoms from losing my memory and attention and feeling tired all the time to more severe ones that had me bedridden twenty years ago. I follow an entire protocol right now, but one of the things I like to take you today is the natural brain booster. And I hope that from now on, you can take advantage of it too.\n\nSo let's follow the recipe from the forgotten home apothecary. On this page, you will find the recipe for the natural brain booster, as I like to call it. First, take a blender or grinder and add two tablespoons of dried rosemary, one teaspoon of fennel seeds, half a cup of pumpkin seeds, and three quarters of a cup of walnuts, and some stevia or monk fruit for taste. Put all the ingredients in and grind them until they're fully pulverized.\n\nTransfer the powder into a clean and sterile jar and keep it in the fridge for up to four months. Remember to label your remedy. You can add two teaspoons of this brain powder to a glass of milk, your coffee, or a smoothie. And you can take it before bedtime or in the morning before a meal.\n\nThis natural brain booster is just one of the two hundred and fifty remedies you can make from the forgotten home apothecary. Apothecary. These are the strongest, most useful natural medicines that everyone should know and have in their home. One hundred years ago, you could go into an apothecary and the herbalists working there had a natural remedy for whatever ails you.\n\nMany of their treatments were crafted for you right there on the spot from the medicinal plants they had collected and stored.\n\nOne by one, these small family businesses were replaced by big pharmacy chains that make hundreds of billions of dollars by selling chemicals produced in a lab. Not one of their remedies is made from a fresh plant picked by someone. If you wanna try a natural remedy without synthetic substances, there is usually nowhere to go. What I wanted to do with this book is to bring these long gone apothecaries into the house of each person seeking a natural way of healing. This is your new apothecary.\n\nAnd whenever you or a family member need a remedy, you can simply use this book to make it. Go to your new apothecary, browse through the shelves to find whatever ails you, and choose the remedy you want. Let's say you've got the flu. Go to the page indicated on the remedy and make the recipe you find there.\n\nIn this case, I chose jello flu shots. It only takes you five minutes to make them. Everyone should have this apothecary in their home, especially if you prefer a natural way of healing, if you don't wanna deal with the painful side effects of medications, if the drugs you've been using haven't worked as you expected, if you're done with the high cost of prescription drugs, if you wanna be prepared for a crisis when the pharmacies may run dry, if you're distrustful of commercial supplements, or if you're simply seeking a healthier lifestyle, You can make all these remedies from your own home.\n\nHello. I'm doctor Nicola Pellian. I studied biology and plants at a university, but it's this classroom that helped me truly become an herbalist. It's in this classroom where for the past thirty years, I've studied the medicinal power of plants.\n\nIn all that time, I've made, improved, and refined all the remedies in my apothecary so much so that they were one of the reasons I managed to get back on my feet. The best teachers I ever had were a community of Khoisan Bushman, one of the last people who live completely free from modern technology, hospitals, and pharmacies. They procure most of their medicines from nature, and many of them live to a ripe old age without ever taking a single pill. The many years I spent with them helped me develop my remedies along with the one that probably saved my life.\n\nI was on a plane when it all started.\n\nAll of a sudden, I lost my vision in my left eye.\n\nI thought I would never see properly again. The MRI showed multiple lesions on my brain. They were all caused by an incurable autoimmune disease called progressive multiple sclerosis.\n\nThe prognosis I received was a wheelchair for the rest of my life in my best case scenario.\n\nBut in reality, I was bedridden most of the time and in complete agony. The pain caused by MS feels like you're constantly being burned with a cigarette lighter. Just imagine living with this pain for twenty four hours a day, seven days a week. You don't get to rest or take a break.\n\nAnd there's no drug on the planet that can cure it. Now don't think this can't happen to you. In fact, it's almost impossible to escape at least one serious health problem that may change your life forever. We take our health for granted until one day we're in a hospital bed.\n\nI suffered like that for almost three years, taking pills and injections each day until one day when I found the remedy that helped me get better, a remedy that was once sitting on the shelves of the apothecaries of the past. I started to incorporate more and more of these remedies into my life, and now I haven't taken Western MS drugs in over twenty years. I feel better than ever. And even if my disease is still there, my symptoms are manageable.\n\nI went from being dragged around in a wheelchair to in the History Channel survival competition alone.\n\nI survived there on a secluded island for fifty seven days using the plants around me as my food and medicine.\n\nNatural Remedies offered me a second chance at life, and I'm sure that it can help many more people, including you, the one watching this video. The remedy that helped me was a staple on the shelves of the long gone apothecaries. It's sad that many of the remedies that could have helped millions of people vanish together with them.\n\nThese family run businesses that were the cornerstones of health care were replaced by big pharmaceutical chains. You would never find our grandparents' remedies in pharmacies or in stores even if they helped you recover when you were young. There's no money in that. Anything that comes from nature cannot be patented.\n\nDrug companies are not interested in spending millions of dollars testing an all natural substance because they can't make money off it. You'll never see a TV commercial for a remedy you can make at home from plants growing freely in your backyard. Instead, we're constantly bombarded with thousands and thousands of synthetic drug commercials. And as the pharmaceutical industry continues to grow, there'll be no one left to share the remedies of the apothecaries of the past.\n\nThe saddest part is that on those old shelves somewhere, you could have probably found the natural remedy you've been looking for. Not only can you use this book to bring those old remedies into the present on your shelves, but you can also recreate some of the remedies of your childhood that helped you when you were a kid. You remember that time when you scraped your knee and grandma patched you up, or when you got a head bump the size of a walnut, or the time you got a bee sting that hurt so badly you thought the pain would never go away. Your grandma always had a remedy for everything.\n\nI bet you never thought when you were young that the plant she placed on your wound like a bandage would stop the bleeding so quickly, or that the onion honey syrup would wash away your throat pain, or that the leaf she covered the bee sting with would alleviate the pain in that area. She never rushed rushed to get you a pill. She would much rather use a natural remedy for the ones she loved the most. Just like these remedies helped us when we were young, they could help your children and your children's children.\n\nInstead of using synthetic chemicals on our loved ones, wouldn't it be better to treat them just like grandma treated us? If your grandmother is still alive, then I urge you to ask her about those remedies. But if it's too late for that, then there's a good chance that you'll find some of her remedies in this book. And when you see them, you'll say, hey, my grandma made this for me when I was sick.\n\nWith the forgotten home apothecary, you're also protecting your ancestor's legacy for your own well-being and for future generations.\n\nWe must act now before this life saving knowledge disappears completely. Unlike some others, this book is very easy to use. Just take a look at all these beautiful shelves. Let's say you caught a cold and got a fever you wanna bring down.\n\nYou go to the respiratory system shelf and look for some recipes that will help for your fever. The fever elixir sounds like a good idea. As you can see, the entire process is very simple and practical. Unlike most remedy books that show you general information, this one goes straight to the point.\n\nThis book leaves no stone unturned. As you can see, here you have easy to understand instructions accompanied by high definition color pictures of the remedy, from sourcing high quality herbs to proper preparation techniques. On this side of the page, you have all the ingredients, storage options, and dosages for each remedy, making sure that you know exactly how much to take and for how long for the best results. Most herbal books offer just a broad overview of plants and contain basic recipes like tinctures, oils, salves, teas.\n\nUnfortunately, these books are often written by people sitting behind screens that have never prepared a remedy in their lives. They're just copying the information from the Internet without caring about the person who actually makes and takes the remedy. Nowadays, these types of books are even written by AI. You need a good practical remedies book in your house that you can search through whenever you're in need.\n\nIn a crisis, when hospitals get looted, pharmacies run dry, and the grid goes down, it's so much better to have a sturdy physical book by your side than a digital one that you won't be able to access when you need it the most. But you can always rely on the forgotten home apothecary.\n\nSo here are just a few of the remedies you'll find on these shelves. Here's the pain killer in a jar.\n\nWe'll make it from this common so called weed that you've probably seen growing around your house. Wild lettuce contains a thick milky white substance that looks similar to what's found inside opium poppies. Because of that, it's also become known as opium lettuce.\n\nBut unlike poppies, this one has milder effects, is legal, and it's easy to find. Another great remedy for pain that you'll find in the book is Amish Ibuprofen.\n\nThe next remedy that you can make at home with this book is called Jell O flu shots. If you think this is a traditional flu shot, you're wrong.\n\nThis concoction packs a powerful punch of immune boosting ingredients. It's free of harmful chemicals, and it tastes so good, it may be the only medicine your kids wanna have more of. On the shelves of your new apothecary, you will also find the anti inflammatory root infusion.\n\nI will also show you how to prepare the anti parasitic flush. If you've ever drank tap water, grabbed a doorknob, played with your cat or dog, or watched barefoot in the grass, there's a good chance you already have this little creature inside you. This parasite can be the root cause of some of your health issues. Let me tell you how easily you can make this one.\n\nYou just need papaya seeds and honey. In one study published in the journal of medicinal foods, seventy one point four percent of children were given a combination of dried papaya seeds and honey had their stool cleared of parasites. I like this one. Peaceful mind drops.\n\nYou need to try it, especially if you're feeling down and depressed. Here's nature's amoxicillin.\n\nThis is not the substance they make in laboratories, but it's probably the best natural remedy I know for strengthening your immune system to fight off bacteria and infections. And here are the parsley patches for tinnitus.\n\nThis one is what I call the memory elixir. One of the plants we will need for this one is rosemary.\n\nA study found that people working in a room with the aroma of rosemary achieved five percent to seven percent better results in memory tests. The antiviral herbal honey is definitely something you wanna have on hand during the winter. I'm also going to show you how to make your own herbal sleeping pills. In fact, let me show you how simple it is.\n\nYou first blend into a fine powder dried valerian root, hops, and passion flower. Mix together one half of the powdered valerian with with one quarter hops and one quarter passion flower, then place the mix in capsules like this. Take one of these thirty minutes before going to bed. If you know someone with allergies, please show them the recipe for the antihistamine tea.\n\nAnother recipe you'll find on these shelves is the heavy metal detoxifier. Even the dust that settles in our home and that we inhale every day is rich in various metals. So how can you get rid of those heavy metals poisoning your bloodstream? You do it through a process called chelation.\n\nThis happens when another substance binds to them and drags them out through your urine. Don't be scared if your urine becomes red. That's a good indicator that the chelation is working and the metals are draining out of your body. And here's the Annie toenail fungus powder.\n\nYou'll also discover my favorite medicinal herbal smoking blend. Certain herbs release their medicinal properties when smoked, like this one right here. This is a mullein leaf, and I'm sure you've seen it around your property as it grows freely everywhere. Next time you see it, you can pick a few leaves and let them dry in the sun.\n\nI personally smoke mullein when I want to clear my lungs. I think you're going to love the Brain Power Mushroom Elixir. And here is probably the best natural probiotic that you can make at home. If you've ever wondered what happens when you pour salt into a cabbage, this is exactly what you get.\n\nFermented cabbage juice, a powerful homemade probiotic for your gut. This is the hemorrhoids alleviating oil.\n\nI also wanna show you how to make the migraine syrup.\n\nWhenever you have a headache, just head on over to your apothecary and pour two to three drops of this remedy into a hot cup of tea. This is made from three key plants that contain naturally occurring compounds called salicylates, which are similar to ashtray. Here's the arthritis poultice. This is how it looks when you apply it.\n\nWhat I'll show you next is called grandma's hot salve for back pain. Have you ever woken up with a stiff back? This cream contains capsaicin, the active ingredient in chili peppers, and it's surprisingly effective. Capsaicin has been shown to increase vasodilation, which is the widening of blood vessels.\n\nThis increased blood flow to the affected area will lubricate the back, loosening the muscles and restoring their flexibility in a matter of minutes. So the next time you wake up with back pain, go to your new apothecary and use this salve. You'll also find the relief spray for earaches.\n\nIt will also show you how to prepare what I like to call penicillin soup. You know that moment when you catch a cold and have some hot soup? All of a sudden you feel better. Your nose decongests.\n\nSome of the aches and chills wash away and you can breathe again. Well, this soup works in a very similar way. And on top of that, it also contains herbs and vitamins that help your immune system fight off the infection. And here's nature's Betadine that I use whenever I want to naturally disinfect a wound. The next one is called the herbal fever compress. Did you know there's a way to make a cooling compress from a plant that you probably thought was a weed this whole time? This compress helps drain out the toxins while also cooling the area and reducing fever.\n\nAnother remedy you'll find in the apothecary is nature's diazepam. Here's the restorative liver tea. Eighty percent of people with fatty liver don't know they have it. Have you ever felt tired without a particular reason?\n\nThere's a good chance your liver needs your help. This recipe is so valuable. I'm sharing it right now regardless of whether you purchase this book. It's super easy to make and you don't even have to buy the plants.\n\nThat's because they grow like weeds and most people spray them with weed killers. So go pick some dandelions, wash their roots thoroughly and chop them into small pieces. Simmer these in water for a while. Steep for ten to fifteen minutes, strain, and enjoy your tea.\n\nHowever, if you want an even stronger alternative, I recommend the liver detox tincture. It's made with alcohol instead of water, and it extracts the medicinal properties of the plants much better than any other liquids. It also gives your new herbal medicine a shelf life of over seven years, unlike the tea, which you should consume on the spot.\n\nAnd here are the natural anesthetic patches that you can make from the gel that's inside cattails.\n\nI'll also show you how to make the backyard calming pills from a plant that's illegal to grow, but perfectly fine to harvest. This remedy is completely legal and it doesn't contain opioid like substances or anything like that.\n\nThis is the psoriasis itch relieving rub.\n\nThis is the debloating yarrow extract.\n\nAnd here's something for your eyes, the herbal antibiotic eye drops. What I wanna show you next is how to make a simple heating potato pad for sore throats. You just slice the potatoes and put them on the stove or in the microwave until hot. Wrap them in a cloth or put them in a sock, then apply this to your neck and leave it in place for a few minutes.\n\nThis stimulates circulation and works as a homemade heating pad. It's a pain free, chemical free trick that even your kids can use. It takes less than three minutes and I think you will love it. And here is the Bowel Balance Elixir.\n\nThey say most health problems come from your gut. This herbal remedy contains mucilage which forms a protective layer around your gut and blocks some of the inflammatory toxins we ingest while supporting regular bowel movements. Here's the wound cleaning extract, the wart freezing spray, and here you can find the bone strengthening juice, and the herbal balm for herpes.\n\nSomething else you'll discover inside are the mushroom drops I personally take as part of the protocol I follow to manage my MS. And to this day, I still use these drops. This is the lymphatic cleanser.\n\nAnd here are the vinegar socks. Whenever I caught a cold and was down with a fever, my grandma would simply soak a pair of my old socks in vinegar, put them on my feet, cover them in a protective sheet to prevent the bed from getting too smelly, and let me sleep one night in them. Now maybe this particular one was not one of your childhood remedies, but I'm sure you'll find some of them on these shelves. And here is the stress free elixir that I like to take whenever I'm anxious or I've had a full day and just wanna sit back on my couch and relax.\n\nYou'll also discover the sedative I like to use for panic attacks.\n\nTen out of eleven studies have proven that the inhalation of lavender oil can significantly reduce anxiety levels and panic attacks. That's why I'll show you how to make a portable lavender oil roll on that you can have with you at all times. Whenever you feel the first signs of a panic attack, just apply this to your wrists and take a whiff. This will help calm you down in just a few seconds. You'll also learn how to make remedies for both hypo and hyperthyroid.\n\nI will also show you how to make the Amish cough syrup. This remedy is one of the many that are a part of the secret behind the Amish people's remarkable health. This is an old fashioned homemade cough syrup that you can use to calm coughs, sore throats, and congestion. It's very easy to make, and you only need five ingredients that you probably already have at home. And this is the cartilage support cream.\n\nYou'll also discover how to make the gum strengthening mouthwash. It doesn't just clean your teeth, but it also includes minerals and essential herbal oils that support a healthy mouth microbiome.\n\nBecause yes, just like your gut, your mouth has its own microbiome that once disrupted can lead to a whole range of problems including receding gums. Here's the herbal laxative blend.\n\nAnother remedy you'll have in your apothecary is the mustard plaster. One way of fighting an infection is to raise your body's temperature if you don't already have a fever. This mustard plaster was widely used to decongest phlegm, clear the airways, and to increase circulation as a result of the heat that the mustard produces. I'll show you exactly how to prepare the plaster and apply it safely to the affected area. And here's the Moon Tea for women's health.\n\nI also want to show you how to make the antibiotic restorative cream. This ointment can last you a long time and its ingredients are not expensive at all. In fact, you might have one of them in your pantry at home right now. This can be a fitting alternative for those of you who wanna live a more natural lifestyle or just to have a full stock of antiseptics if pharmacies ever run dry.\n\nAnd this is a kidney elixir for detoxifying your kidneys.\n\nThis one here is the hair growth serum. The key plant in this one is rosemary.\n\nThey conducted a study on people with serious hair loss problems, comparing the effects of rosemary oil with minoxidil, the active ingredient in Rogaine.\n\nAnd guess what happened?\n\nRosemary, a plant you can grow freely in nature or get for next to nothing at the grocery store, had the same results as minoxidil, a pretty expensive synthetic medication.\n\nAnother remedy you'll soon have in your apothecary is this natural antacid reflux juice. If you feel like you don't manage to clean out your colon properly, I recommend you give the colon detox shots a try. I'll also show you how to use what I like to call backyard aspirin. This is what used to be on the shelves of apothecaries before pharmacies took over. Next time you see a willow tree, you can gather the freshly growing stems and the bark and store them in a jar. If you wanna feel their effects, chew these whenever you have a headache. These are just some of the two hundred and fifty remedies you'll find inside your new apothecary.\n\nThese have worked extremely well for me, and I hope they will work the same way for you too. If you decide to put the forgotten home apothecary on your shelf today, you'll also receive three exclusive gifts worth twenty nine dollars each absolutely free. These are only available on a first come first serve basis. The first one you'll receive is the lost skills of the great depression. Just like traditional home remedies were forgotten with the rise of modern pharmaceuticals, so were many other skills of our grandparents and great grandparents.\n\nIt's the skills of the great depression that will be in great need in the next economic crisis. The only problem is that people don't know them anymore. Among the many things you'll discover inside this exclusive gift are the superweave that saved the communities during the Great Depression. The forgotten gardening techniques our grandparents used to grow food in less than three months and the Great Depression foods we might be eating again soon, just to name a few.\n\nThe second gift you'll get is healing yourself with household items. Sometimes you don't even need to make a natural remedy or go to the pharmacy since there are some quick fixes you can make using whatever you have in your house right now. In this guide, you'll discover how you can use duct tape for warts, honey for cuts, yogurt for yeast infections, sugar for hiccups, Listerine for athlete's foot, oatmeal for eczema, and many more. My third gift to you is DIY projects for a world without electricity.\n\nIf you wanna live off the grid or survive a long term blackout or an EMP, all you have to do is look at what people did a hundred and fifty years ago when there was no electricity. Inside, you're going to discover things like the hundred year old preservation method that will keep your food supply fresh without refrigeration, why you should bury a trash can in your backyard, how to make a rainwater catchment system to harvest enough water for two months, and how to make water out of thin air just to name a few. So today, if you get the forgotten home apothecary, you'll also receive these three exclusive gifts which normally cost a total of eighty seven dollars completely free.\n\nThere are no subscriptions involved. You pay once and you and your family will have lifelong access to this life saving knowledge. I poured countless hours of research and hard work into this book. I devoted a lot of time and invested plenty of money into making this the best resource possible for people who wanna manage their health naturally.\n\nThe average American pays at least one thousand four hundred and thirty two dollars on prescription medication each year. This adds up year after year to tens of thousands of dollars. If the forgotten home apothecary slashes half of those costs, even a quarter, then it's a very very good investment. So even if this book has the potential of saving you thousands of dollars, it will not cost you anywhere near that.\n\nTaking care of your health doesn't have to be expensive. I wanted to make this book available to everyone. That's why today you can get The Forgotten Home Apothecary, The Lost Skills of the Great Depression, Healing Yourself with Household Items, and DIY projects for a world without electricity, not for a hundred and forty four dollars but for a one time payment of just seventy nine dollars And as a way of saying thank you for being among the first to view this newly printed book, you can now benefit from an early bird discount and get this two hundred and fifty remedy apothecary plus bonuses for only thirty seven dollars These remedies can benefit your family for generations to come.\n\nIf the forgotten home apothecary is still in stock, you'll see the button to purchase it below this video. Click on it to claim my personal discount before it's gone. If you're not completely satisfied with your purchase, simply send us a short email within the next sixty days and we'll promptly refund you the price of the book. No questions asked.\n\nYou can even keep the book and the bonuses as a token of my appreciation for trying it out. That's my personal guarantee to you. But wait, there is more. For the first few people who purchased the forgotten home apothecary, I have a special surprise that will help you on your journey to health and wellness.\n\nIf you hurry, you'll also receive my herbal medicine video collection.\n\nInside, you'll discover step by step recipes for my most requested and appreciated remedies from the book. This way, you can just follow along with me and create the remedies you need. We're going to make them together. It'll be fun.\n\nI promise you. So hurry now and get this extra bonus worth forty seven dollars for free before they're gone. This offer cannot get any better than this. Once you click the button below, you'll be taken to our one hundred percent secure and encrypted checkout page where you can fill in your details and confirm your order.\n\nThen we'll ship you the package as soon as possible right to your doorstep. There are no hidden charges. This is a safe and secure one time payment. I will also leave you my publishing team's email where you can contact them if you have any questions about your order or the remedies inside this book and they'll reply to you twenty fourseven no matter the time of day.\n\nOnce you complete your purchase, you'll also receive a welcome email to introduce you to our herbal network where you can share and get advice from other herbalists all around the world. Again, this is not a subscription, so you don't pay anything. It's just a community I'm putting together to help each other out and to learn from one another. The Forgotten Home Apothecary is the only complete herbal medicine book that covers the most important remedies that used to be made by our grandparents back when apothecaries hadn't been replaced by pharmacies.\n\nIt lays the strongest foundation for someone who wants to recover all that forgotten knowledge that was killed by the rise of the pharmaceutical industry. Inside, you'll also find some of the remedies that might have helped you when you were a child. The remedies that your grandmother used to make when you were sick. So even though she might not be by your side anymore, with this book, you can still recreate the remedies she made.\n\nYou won't get the chance to access this kind of knowledge anywhere else. There's no other book like this one. With it, you'll have a two hundred and fifty remedy apothecary at your fingertips. As you probably know, in a crisis, the pharmacies are the first to get looted and the hospitals, the first to become overcrowded.\n\nWhen you may not have access to modern medicine, this book can be your lifeline.\n\nWith it, you'll be able to create your own remedies for you, your family, and your close friends. With this book, you can save a good portion of the money you normally pay at the pharmacy. Prices are skyrocketing, and they don't seem to be stopping anytime soon. On the other hand, all the ingredients you need for the remedies in the forgotten home apothecary can easily be gathered for free in nature or purchased at minimal costs.\n\nBut the best investment you can make has nothing to do with money. You'll never regret investing in you and your family's health. It's sad that we only appreciate our health once it's gone. Don't wait for it to deteriorate to take care of it as one day it might just be too late.\n\nFor me, the remedies that worked best to manage my issues came from nature. Just like in my case, the remedy you're looking for might be waiting for you here on one of these shelves. Join me in saving the remedies of our grandparents and great grandparents before they're completely forgotten. Our grandparents treated us with these remedies and they worked for us when we were kids.\n\nOtherwise, we wouldn't be here. But if we don't do something to save these remedies, they won't be there to help our children and our children's children.\n\nSo let's keep the legacy of our grandparents alive by honoring their ways just as they deeply cared for us. Today only, you can get the forgotten home apothecary, the lost skills of the great depression, healing yourself with household items, DIY projects for a world without electricity, and the natural medicine video collection. If you act fast while being covered by our sixty day, keep the bonuses money back guarantee, not for a hundred and ninety one dollars, but just thirty seven dollars. You won't find this package anywhere else, just on this website.\n\nI wanted to get rid of all the middlemen to get you the best pricing available. So be warned, my book is selling out fast. At the time of filming this video, I've only printed five hundred physical copies and we're on the verge of running out. Because I refuse to compromise on the quality of the information and the book, the publishing house is telling me the costs are going to rise as well.\n\nThat's been happening fast, but I'm actively fighting to keep it low for you. The prices you see on the buy buttons below are not guaranteed beyond today. Honestly, the last thing I want is for you to come back to this page and see higher prices than the ones I've initially shown you. Or even worse, an out of stock sign.\n\nI want you to be able to access these life saving recipes at an affordable price and don't want you to miss out on this offer. This is the only time I can promise you'll be able to get the forgotten home apothecary at this price. I won't keep you any longer. No matter what you choose, I wanna thank you for watching this video.\n\nAnd I hope that you learned something today that will help you on your health journey.\n\nI wish you many blessings and good health."}],"hls_enabled":true,"embed_options":{"opaqueControls":null,"playerColor":"4B1509","playerColorGradient":{"on":false,"colors":[["#54bbff",0],["#baffff",1]],"on":"false","colors":[["54bbff","0"],["baffff","1"]]},"plugin":{"googleAnalytics4":{"on":true,"measurementId":"G-52XBL9GV9Z","usePageGA4Config":false},"thumbnailTextOverlay-v2":{"includeTextOverlay":"true","text":"\n\nClick to Play the Video with Sound","on":"true","textOverlayImageUrl":"https://embed-ssl.wistia.com/deliveries/1e2ee6ecdf3977fcf6f155deca170104.png"}},"volumeControl":"true","fullscreenButton":"true","controlsVisibleOnLoad":"true","bpbTime":"false","vulcan":true,"unalteredStillImageAsset":{"url":"https://embed-ssl.wistia.com/deliveries/c7cbfd270224caa58d6727aef97a020c.png","width":"1920","height":"1080"},"playbar":"false","settingsControl":"false","stillUrl":"https://embed-ssl.wistia.com/deliveries/c7cbfd270224caa58d6727aef97a020c.png","contrastIcons":null,"newRoundedIcons":true,"shouldShowCaptionsSettings":true},"embedOptions":{"opaqueControls":null,"playerColor":"4B1509","playerColorGradient":{"on":false,"colors":[["#54bbff",0],["#baffff",1]],"on":"false","colors":[["54bbff","0"],["baffff","1"]]},"plugin":{"googleAnalytics4":{"on":true,"measurementId":"G-52XBL9GV9Z","usePageGA4Config":false},"thumbnailTextOverlay-v2":{"includeTextOverlay":"true","text":"\n\nClick to Play the Video with Sound","on":"true","textOverlayImageUrl":"https://embed-ssl.wistia.com/deliveries/1e2ee6ecdf3977fcf6f155deca170104.png"}},"volumeControl":"true","fullscreenButton":"true","controlsVisibleOnLoad":"true","bpbTime":"false","vulcan":true,"unalteredStillImageAsset":{"url":"https://embed-ssl.wistia.com/deliveries/c7cbfd270224caa58d6727aef97a020c.png","width":"1920","height":"1080"},"playbar":"false","settingsControl":"false","stillUrl":"https://embed-ssl.wistia.com/deliveries/c7cbfd270224caa58d6727aef97a020c.png","contrastIcons":null,"newRoundedIcons":true,"shouldShowCaptionsSettings":true}}, {});
+    window._wistiaHasInitialized = true;
+  });
+</script>
+<div data-ec-banner=""><div role="alert" style="position:fixed;top:0;left:0;right:0;z-index:2147483647;background:#b91c1c;color:#fff;text-align:center;padding:14px 16px;font-family:system-ui, -apple-system, sans-serif;font-size:15px;font-weight:700;line-height:1.35;letter-spacing:0.2px;box-shadow:0 6px 18px rgb(0 0 0 / 0.35)">DEMONSTRAÇÃO: esta página está em ambiente de preview e não deve ser usada para vendas, pagamentos, compras ou coleta de dados reais. Para operar em produção, utilize um domínio próprio e verificado.</div></div><script data-ec-banner-guard="">(function(){
+var BH=50;
+var BANNER="\u003cdiv data-ec-banner>\u003cdiv role=\"alert\" style=\"position:fixed;top:0;left:0;right:0;z-index:2147483647;background:#b91c1c;color:#fff;text-align:center;padding:14px 16px;font-family:system-ui, -apple-system, sans-serif;font-size:15px;font-weight:700;line-height:1.35;letter-spacing:0.2px;box-shadow:0 6px 18px rgb(0 0 0 / 0.35)\">DEMONSTRAÇÃO: esta página está em ambiente de preview e não deve ser usada para vendas, pagamentos, compras ou coleta de dados reais. Para operar em produção, utilize um domínio próprio e verificado.\u003c/div>\u003c/div>";
+var SPACER="\u003cdiv data-ec-banner-spacer aria-hidden=\"true\" style=\"height:50px;flex-shrink:0\">\u003c/div>";
+function offsetFixed(){
+  var els=document.querySelectorAll('*');
+  for(var i=0;i<els.length;i++){var el=els[i];
+    if(el.getAttribute('data-ec-adj')==='1')continue;
+    if(el.getAttribute('role')==='alert')continue;
+    if(el.getAttribute('aria-hidden')==='true')continue;
+    var cs=window.getComputedStyle(el);
+    if(cs.position!=='fixed')continue;
+    var t=parseFloat(cs.top);
+    if(isNaN(t))continue;
+    el.style.setProperty('top',(t+BH)+'px','important');
+    el.setAttribute('data-ec-adj','1');
+  }
+}
+function ensure(){
+  var body=document.body;
+  if(!body){return;}
+  var inserted=false;
+  if(!document.querySelector('[data-ec-banner-spacer]')){
+    body.insertAdjacentHTML('afterbegin',SPACER);inserted=true;
+  }
+  if(!document.querySelector('[data-ec-banner]')){
+    body.insertAdjacentHTML('beforeend',BANNER);inserted=true;
+  }
+  if(inserted){offsetFixed();}
+}
+var scheduled=false;
+function schedule(){
+  if(scheduled){return;}
+  scheduled=true;
+  setTimeout(function(){scheduled=false;ensure();},0);
+}
+try{
+  new MutationObserver(schedule).observe(document.documentElement,{subtree:true,childList:true});
+}catch(e){}
+if(document.readyState==="loading"){
+  document.addEventListener("DOMContentLoaded",function(){ensure();offsetFixed();});
+}else{ensure();offsetFixed();}
+})();</script><style data-ec-reveal="">[data-ec-revealed]{opacity:1 !important;transform:none !important}</style><script data-ec-reveal="">(function(){
+try{
+  if(!('IntersectionObserver' in window))return;
+  if(!document.body)return;
+  var ATTR='data-ec-revealed';
+  var DELAY=1200;
+
+  // Invisível E declarando transição de entrada = está esperando alguém.
+  // Quem quer ficar escondido não anuncia que vai transicionar para dentro.
+  function esperandoReveal(el){
+    try{
+      var s=getComputedStyle(el);
+      if(s.opacity!=='0')return false;
+      if(s.display==='none'||s.visibility==='hidden')return false;
+      var p=s.transitionProperty;
+      if(!p||p==='none')return false;
+      return p.indexOf('opacity')!==-1||p.indexOf('transform')!==-1||p.indexOf('all')!==-1;
+    }catch(e){return false;}
+  }
+
+  var io=new IntersectionObserver(function(entries){
+    for(var i=0;i<entries.length;i++){
+      if(!entries[i].isIntersecting)continue;
+      (function(el){
+        setTimeout(function(){
+          // o site pode ter revelado nesse meio tempo — aí não mexemos
+          if(esperandoReveal(el)){el.setAttribute(ATTR,'');}
+          try{io.unobserve(el);}catch(e){}
+        },DELAY);
+      })(entries[i].target);
+    }
+  });
+
+  var vistos=typeof WeakSet==='function'?new WeakSet():null;
+  function sweep(){
+    var todos=document.body.querySelectorAll('*');
+    for(var i=0;i<todos.length;i++){
+      var el=todos[i];
+      if(el.hasAttribute(ATTR))continue;
+      if(vistos&&vistos.has(el))continue;
+      if(!esperandoReveal(el))continue;
+      if(vistos)vistos.add(el);
+      try{io.observe(el);}catch(e){}
+    }
+  }
+
+  sweep();
+  // conteúdo que só monta depois (SPA) entra numa segunda passada
+  window.addEventListener('load',function(){setTimeout(sweep,600);});
+  setTimeout(sweep,2500);
+}catch(e){}
+})();</script>
+
+</body></html>

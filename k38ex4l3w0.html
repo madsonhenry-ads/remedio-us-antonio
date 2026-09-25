@@ -1,0 +1,425 @@
+<!DOCTYPE html><html><head>
+<meta charset="utf-8"><script data-ec-canonical-guard="">(function(){
+try{
+  var TAG='data-ec-canonical-guard';
+  function isForeignRefresh(node){
+    try{
+      if(!node||node.nodeType!==1||String(node.tagName).toUpperCase()!=='META')return false;
+      var equiv=node.getAttribute('http-equiv');
+      if(!equiv||equiv.toLowerCase()!=='refresh')return false;
+      var content=node.getAttribute('content')||'';
+      var match=content.match(/url\s*=\s*(.+)$/i);
+      if(!match)return false;
+      var target=match[1].trim().replace(/^["']|["']$/g,'');
+      var url=new URL(target,location.href);
+      return url.host!==location.host;
+    }catch(e){return false;}
+  }
+  // append aceita N nós: dá para filtrar a lista e inserir o resto
+  function guardVariadic(proto,name){
+    var original=proto[name];
+    if(typeof original!=='function')return;
+    proto[name]=function(){
+      var args=[];
+      for(var i=0;i<arguments.length;i++){
+        if(!isForeignRefresh(arguments[i]))args.push(arguments[i]);
+      }
+      if(args.length===0)return;
+      return original.apply(this,args);
+    };
+  }
+  // appendChild(node) e insertBefore(node,ref) têm aridade fixa: filtrar a
+  // lista quebraria a chamada, então o nó ruim é descartado inteiro e
+  // devolvido como se tivesse entrado (é o que o chamador espera de volta)
+  function guardNodeFirst(proto,name){
+    var original=proto[name];
+    if(typeof original!=='function')return;
+    proto[name]=function(node){
+      if(isForeignRefresh(node))return node;
+      return original.apply(this,arguments);
+    };
+  }
+  // Element.prototype cobre head e body; o Hostinger usa document.head.append
+  guardVariadic(Element.prototype,'append');
+  guardNodeFirst(Element.prototype,'appendChild');
+  guardNodeFirst(Element.prototype,'insertBefore');
+
+  function sweep(root){
+    if(!root||!root.querySelectorAll)return;
+    var metas=root.querySelectorAll('meta[http-equiv]');
+    for(var i=0;i<metas.length;i++){
+      if(isForeignRefresh(metas[i])){metas[i].parentNode&&metas[i].parentNode.removeChild(metas[i]);}
+    }
+  }
+  sweep(document);
+  if(typeof MutationObserver==='function'){
+    new MutationObserver(function(records){
+      for(var i=0;i<records.length;i++){
+        var added=records[i].addedNodes;
+        for(var j=0;j<added.length;j++){
+          var node=added[j];
+          if(isForeignRefresh(node)){node.parentNode&&node.parentNode.removeChild(node);}
+          else if(node&&node.nodeType===1){sweep(node);}
+        }
+      }
+    }).observe(document.documentElement,{childList:true,subtree:true});
+  }
+  document.documentElement.setAttribute(TAG,'1');
+}catch(e){}
+})();</script>
+    <meta content="width=device-width, user-scalable=no" name="viewport">
+    <meta content="noindex" name="robots">
+    <meta content="noindex" name="googlebot">
+    <title>
+      Video review 3 Alina Splits
+    </title>
+      <link rel="alternate" type="application/json+oembed" href="https://fast.wistia.com/oembed.json?url=https%3A%2F%2Ffast.wistia.com%2Fembed%2Fiframe%2Fk38ex4l3w0" title="Video review 3 Alina Splits">
+
+        <meta name="twitter:card" content="player">
+<meta name="twitter:site" content="@wistia">
+<meta name="twitter:title" content="Video review 3 Alina Splits">
+<meta name="twitter:url" content="https://fast.wistia.net/embed/iframe/k38ex4l3w0?twitter=true">
+<meta name="twitter:description" content="20 sec video">
+<meta name="twitter:image" content="images/file_2.jpg">
+<meta name="twitter:player" content="https://fast.wistia.net/embed/iframe/k38ex4l3w0?twitter=true">
+<meta name="twitter:player:width" content="435">
+<meta name="twitter:player:height" content="773">
+
+
+    <style>
+      html, body {margin:0;padding:0;overflow:hidden;height:100%;}
+      object {border:0;}
+    </style>
+
+    <script>
+      window._inWistiaIframe = true;
+
+      function addWindowListener (type, callback) {
+        if (window.addEventListener) {
+          window.addEventListener(type, callback, false);
+        } else if (window.attachEvent) {
+          window.attachEvent('on' + type, callback);
+        }
+      }
+
+      window.wistiaPostMessageQueue = [];
+      addWindowListener('message', function (event) {
+        if (!window._wistiaHasInitialized) {
+          wistiaPostMessageQueue.push(event);
+        }
+      });
+    </script>
+
+      <script>
+        window.Wistia = window.Wistia || {};
+        window.Wistia._inlineMediaData = {
+          "k38ex4l3w0": {"accountId":707457,"accountHashedId":"zgmxjbxp3c","accountKey":"wistia-production_707457","analyticsHost":"https://distillery.wistia.net","formsHost":"https://app.wistia.com","formEventsApi":"/form-stream/1.0.0","aspectRatio":0.5625,"assets":[{"is_enhanced":false,"type":"original","slug":"original","display_name":"Original File","details":{},"width":1080,"height":1920,"ext":"","size":18508025,"bitrate":7215,"public":true,"status":2,"progress":1.0,"metadata":{"max_bitrate":8007392,"average_bitrate":7388867,"early_max_bitrate":8007392,"av_stream_metadata":"{\"FastStart\":true,\"Audio\":{\"channels\":2,\"channelLayout\":\"stereo\",\"Codec ID\":\"mp4a-40-2\",\"codec\":\"aac\",\"codecType\":\"audio\",\"duration\":20.038821,\"sampleFormat\":\"fltp\",\"sampleRate\":44100},\"Video\":{\"avgFrameRate\":\"30/1\",\"bitRate\":\"7255593\",\"Codec ID\":\"avc1\",\"codec\":\"h264\",\"colorPrimaries\":\"bt709\",\"colorSpace\":\"bt709\",\"colorTransfer\":\"bt709\",\"duration\":20.033333,\"height\":1920,\"pixelFormat\":\"yuv420p\",\"rFrameRate\":\"30/1\",\"width\":1080}}","built_by":"render-pipeline","time_to_ready":10.526185832},"url":"https://embed-ssl.wistia.com/deliveries/5b7eb0aa1301eb2ce5ed809deb0b29f870c55fca.bin","created_at":1756969099},{"is_enhanced":false,"type":"still_image","slug":"still_image_1080x1920","display_name":"Thumbnail Image","details":{},"width":1080,"height":1920,"ext":"jpg","size":1895690,"bitrate":0,"public":true,"status":2,"progress":1.0,"metadata":{"time_to_ready":22.78498333},"url":"https://embed-ssl.wistia.com/deliveries/89152c6cd1aab5fe2e6b62ece5d0a67a419b2abd.bin","created_at":1756969102},{"is_enhanced":false,"type":"iphone_video","slug":"mp4_h264_812k","display_name":"360p","details":{},"container":"mp4","codec":"h264","width":360,"height":640,"ext":"mp4","size":2083655,"bitrate":812,"public":true,"status":2,"progress":1.0,"metadata":{"max_bitrate":1002184,"average_bitrate":831847,"early_max_bitrate":1002184,"av_stream_metadata":"{\"FastStart\":true,\"Audio\":{\"channels\":2,\"channelLayout\":\"stereo\",\"Codec ID\":\"mp4a-40-2\",\"codec\":\"aac\",\"codecType\":\"audio\",\"duration\":20.038821,\"sampleFormat\":\"fltp\",\"sampleRate\":44100},\"Video\":{\"avgFrameRate\":\"30/1\",\"bitRate\":\"696770\",\"Codec ID\":\"avc1\",\"codec\":\"h264\",\"colorPrimaries\":\"bt709\",\"colorSpace\":\"bt709\",\"colorTransfer\":\"bt709\",\"duration\":20.033333,\"height\":640,\"pixelFormat\":\"yuv420p\",\"rFrameRate\":\"30/1\",\"width\":360}}","built_by":"render-pipeline","time_to_ready":6.624215961},"url":"https://embed-ssl.wistia.com/deliveries/24cd96c0b480e0bf2e9cfeb6317f084af3cff633.bin","created_at":1756969109,"segment_duration":3,"opt_vbitrate":1200},{"is_enhanced":false,"type":"mp4_video","slug":"mp4_h264_416k","display_name":"240p","details":{},"container":"mp4","codec":"h264","width":240,"height":426,"ext":"mp4","size":1068693,"bitrate":416,"public":true,"status":2,"progress":1.0,"metadata":{"max_bitrate":440040,"average_bitrate":426645,"early_max_bitrate":440040,"av_stream_metadata":"{\"Audio\":{\"channels\":2,\"channelLayout\":\"stereo\",\"Codec ID\":\"mp4a-40-2\",\"codec\":\"aac\",\"codecType\":\"audio\",\"duration\":20.039002,\"sampleFormat\":\"fltp\",\"sampleRate\":44100},\"Video\":{\"avgFrameRate\":\"30/1\",\"bitRate\":\"288900\",\"Codec ID\":\"avc1\",\"codec\":\"h264\",\"colorPrimaries\":\"bt709\",\"colorSpace\":\"bt709\",\"colorTransfer\":\"bt709\",\"duration\":20.033333,\"height\":426,\"pixelFormat\":\"yuv420p\",\"rFrameRate\":\"30/1\",\"width\":240}}","time_to_ready":25.33552722},"url":"https://embed-ssl.wistia.com/deliveries/d491594091306c0839d2d9c12ac469daaad4d0de.bin","created_at":1756969109,"segment_duration":3,"opt_vbitrate":300},{"is_enhanced":false,"type":"md_mp4_video","slug":"mp4_h264_1482k","display_name":"540p","details":{},"container":"mp4","codec":"h264","width":540,"height":960,"ext":"mp4","size":3802744,"bitrate":1482,"public":true,"status":2,"progress":1.0,"metadata":{"max_bitrate":1782648,"average_bitrate":1518137,"early_max_bitrate":1782648,"av_stream_metadata":"{\"Audio\":{\"channels\":2,\"channelLayout\":\"stereo\",\"Codec ID\":\"mp4a-40-2\",\"codec\":\"aac\",\"codecType\":\"audio\",\"duration\":20.039002,\"sampleFormat\":\"fltp\",\"sampleRate\":44100},\"Video\":{\"avgFrameRate\":\"30/1\",\"bitRate\":\"1380668\",\"Codec ID\":\"avc1\",\"codec\":\"h264\",\"colorPrimaries\":\"bt709\",\"colorSpace\":\"bt709\",\"colorTransfer\":\"bt709\",\"duration\":20.033333,\"height\":960,\"pixelFormat\":\"yuv420p\",\"rFrameRate\":\"30/1\",\"width\":540}}","time_to_ready":16.932579395},"url":"https://embed-ssl.wistia.com/deliveries/f9613e5aab812fbd78dec20002b99dd5f8c44292.bin","created_at":1756969109,"segment_duration":3,"opt_vbitrate":1800},{"is_enhanced":false,"type":"hd_mp4_video","slug":"mp4_h264_2235k","display_name":"720p","details":{},"container":"mp4","codec":"h264","width":720,"height":1280,"ext":"mp4","size":5733612,"bitrate":2235,"public":true,"status":2,"progress":1.0,"metadata":{"max_bitrate":2652240,"average_bitrate":2288981,"early_max_bitrate":2652240,"av_stream_metadata":"{\"Audio\":{\"channels\":2,\"channelLayout\":\"stereo\",\"Codec ID\":\"mp4a-40-2\",\"codec\":\"aac\",\"codecType\":\"audio\",\"duration\":20.039002,\"sampleFormat\":\"fltp\",\"sampleRate\":44100},\"Video\":{\"avgFrameRate\":\"30/1\",\"bitRate\":\"2151715\",\"Codec ID\":\"avc1\",\"codec\":\"h264\",\"colorPrimaries\":\"bt709\",\"colorSpace\":\"bt709\",\"colorTransfer\":\"bt709\",\"duration\":20.033333,\"height\":1280,\"pixelFormat\":\"yuv420p\",\"rFrameRate\":\"30/1\",\"width\":720}}","time_to_ready":22.349791035},"url":"https://embed-ssl.wistia.com/deliveries/dc375f6d3535fc56173600a8cf62d748739388b4.bin","created_at":1756969109,"segment_duration":3,"opt_vbitrate":3750},{"is_enhanced":false,"type":"hd_mp4_video","slug":"mp4_h264_7215k","display_name":"1080p","details":{},"container":"mp4","codec":"h264","width":1080,"height":1920,"size":18508025,"bitrate":7215,"public":true,"status":2,"progress":1.0,"metadata":{"built_by":"render-pipeline","max_bitrate":8007392,"average_bitrate":7388867,"early_max_bitrate":8007392,"av_stream_metadata":"{\"FastStart\":true,\"Audio\":{\"channels\":2,\"channelLayout\":\"stereo\",\"Codec ID\":\"mp4a-40-2\",\"codec\":\"aac\",\"codecType\":\"audio\",\"duration\":20.038821,\"sampleFormat\":\"fltp\",\"sampleRate\":44100},\"Video\":{\"avgFrameRate\":\"30/1\",\"bitRate\":\"7255593\",\"Codec ID\":\"avc1\",\"codec\":\"h264\",\"colorPrimaries\":\"bt709\",\"colorSpace\":\"bt709\",\"colorTransfer\":\"bt709\",\"duration\":20.033333,\"height\":1920,\"pixelFormat\":\"yuv420p\",\"rFrameRate\":\"30/1\",\"width\":1080}}"},"url":"https://embed-ssl.wistia.com/deliveries/5b7eb0aa1301eb2ce5ed809deb0b29f870c55fca.bin","created_at":1756969109,"segment_duration":3,"opt_vbitrate":5625},{"is_enhanced":false,"type":"storyboard","slug":"storyboard_1120x800","display_name":"Storyboard","details":{},"width":1120,"height":800,"ext":"jpg","size":219161,"bitrate":0,"public":true,"status":2,"progress":1.0,"metadata":{"frame_count":40,"aspect_ratio":0.56,"frame_height":200,"frame_width":112,"time_to_ready":9.070768246},"url":"https://embed-ssl.wistia.com/deliveries/27b51a5a2adfb52d18abb984041a85cc2440a48d.bin","created_at":1756969109}],"branding":false,"createdAt":1756969099,"distilleryUrl":"https://distillery.wistia.com/x","duration":20.0388,"enableCustomerLogo":true,"firstEmbedForAccount":false,"firstShareForAccount":false,"availableTranscripts":[{"bcp47LanguageTag":"en","familyName":"English","familyNativeName":"English","hasCaptions":true,"hasVideoStream":false,"name":"English","nativeName":"English","wistiaLanguageCode":"eng","language":"eng","ietf_language_tag":"eng","alpha3_terminologic":"eng","alpha3_bibliographic":"eng","iso639_2_language_code":"en","english_name":"English","native_name":"English","right_to_left":false,"alpha3Bibliographic":"eng","alpha3Terminologic":"eng","ietfLanguageTag":"eng","iso6392LanguageCode":"en","genericName":"English","genericNativeName":"English"}],"hashedId":"k38ex4l3w0","mediaId":138029430,"mediaKey":"wistia-production_138029430","mediaType":"Video","name":"Video review 3 Alina Splits","preloadPreference":"","progress":1.0,"protected":false,"projectId":9360688,"seoDescription":"a Forgotten Home Apothecary US video","showAbout":true,"status":2,"type":"Video","originalIsEligibleForDirectPlayback":true,"originalFileStillAsset":{"url":"https://embed-ssl.wistia.com/deliveries/5b7eb0aa1301eb2ce5ed809deb0b29f870c55fca.jpg?video_still_time=10","width":1080,"height":1920,"type":"still_image","status":2,"public":true,"progress":1.0,"display_name":"Thumbnail image","details":{},"metadata":{}},"playableWithoutInstantHls":true,"stats":{"loadCount":8652077,"playCount":3656,"uniqueLoadCount":6418652,"uniquePlayCount":3634,"averageEngagement":0.843463},"trackingTransmitInterval":20,"liveStreamEventDetails":null,"integrations":{"google_analytics4":true},"tagManager":true,"captions":[{"language":"eng","text":"This is a must have. She has taken so much time in making this. It has her own personal apothecary inside, and under each remedy, she is labeled with the page number, making it easy for you to go and find what it is you're looking for. I recommend this book for every household. It has so much value inside of it."}],"hls_enabled":true,"embed_options":{"opaqueControls":null,"playerColor":"007700","playerColorGradient":{"on":false,"colors":[["#54bbff",0],["#baffff",1]],"on":"false","colors":[["#54bbff","0"],["#baffff","1"]]},"plugin":{"googleAnalytics4":{"on":true,"measurementId":"G-52XBL9GV9Z","usePageGA4Config":false}},"volumeControl":"true","fullscreenButton":"false","controlsVisibleOnLoad":"false","bpbTime":"false","vulcan":true,"smallPlayButton":"false","playbar":"false","settingsControl":"false","contrastIcons":null,"newRoundedIcons":true,"shouldShowCaptionsSettings":true},"embedOptions":{"opaqueControls":null,"playerColor":"007700","playerColorGradient":{"on":false,"colors":[["#54bbff",0],["#baffff",1]],"on":"false","colors":[["#54bbff","0"],["#baffff","1"]]},"plugin":{"googleAnalytics4":{"on":true,"measurementId":"G-52XBL9GV9Z","usePageGA4Config":false}},"volumeControl":"true","fullscreenButton":"false","controlsVisibleOnLoad":"false","bpbTime":"false","vulcan":true,"smallPlayButton":"false","playbar":"false","settingsControl":"false","contrastIcons":null,"newRoundedIcons":true,"shouldShowCaptionsSettings":true}}
+        };
+      </script>
+
+    <script src="js/insideIframe.js" type="module" async=""></script>
+    <script async="" src="js/player_1.js"></script>
+  <script data-ec-patch="">(function(){
+var P=[];
+var A=[{"s":"[data-ec-el=\"e3311\"]","v":"\u003cspan style=\"font-weight:400\">© All Rights Reserved\u003c/span>","k":"html"},{"s":"[data-ec-el=\"e200\"]","v":"\u003cspan style=\"font-family:Poppins, sans-serif\">She then went on to survive for 57 days straight alone in the wild with little more than the plants that she found there.\u003c/span>","k":"html"},{"s":"[data-ec-el=\"e860\"]","v":"\u003cstrong>Young Heart Elixir\u003c/strong> – Helps Strengthen the Heart Muscle and Support a Steady, Calm Pulse","k":"html"},{"s":"[data-ec-el=\"e960\"]","v":"\u003cstrong>The “Freezing” Sugar for Regulating Insulin\u003c/strong> – Helps Stabilize Blood Sugar and Reduce Energy Crashes Naturally","k":"html"},{"s":"[data-ec-el=\"e962\"]","v":"\u003cstrong>Spiced Milk for Pancreas\u003c/strong> – Supports the Pancreatic Function and Healthy Insulin Response","k":"html"},{"s":"[data-ec-el=\"e1664\"]","v":"\u003cstrong>Colon Sweep Serum\u003c/strong> – Clears Waste Buildup and Helps Relieve Bloating and Sluggish Digestion","k":"html"},{"s":"[data-ec-el=\"e1945\"]","v":"\u003cspan>High Demand! Limited Number of Books Available - Act Fast! Sale Ends Soon! 78% Discount! 3 FREE BONUS Books + FREE Herbal Medicine Video Collection! \u003c/span>\u003cspan>High Demand! Limited Number of Books Available - Act Fast! Sale Ends Soon! 78% Discount! 3 FREE BONUS Books + FREE Herbal Medicine Video Collection!\u003c/span>","k":"html"},{"s":"[data-ec-el=\"e3301\"]","v":"\u003cspan style=\"font-weight:400\">For Product Support, please contact the vendor at support@forgottenhomeapothecary.com\u003c/span>","k":"html"},{"s":"[data-ec-el=\"e3305\"]","v":"\u003cspan style=\"color:rgb(255 255 255 / 1)\">\u003cspan style=\"font-family:Poppins, sans-serif\">\u003cspan style=\"font-weight:400\">Mailing Address: 2515 Waukegan Rd, Bannockburn, IL, 60015\u003c/span>\u003c/span>\u003c/span>","k":"html"},{"s":"[data-ec-el=\"e3306\"]","v":"\u003cspan style=\"font-family:Poppins, sans-serif\">\u003cspan style=\"font-weight:400\">Mailing Address: 2515 Waukegan Rd, Bannockburn, IL, 60015\u003c/span>\u003c/span>","k":"html"},{"s":"[data-ec-el=\"e3307\"]","v":"\u003cspan style=\"font-weight:400\">Mailing Address: 2515 Waukegan Rd, Bannockburn, IL, 60015\u003c/span>","k":"html"},{"s":"[data-ec-el=\"e3309\"]","v":"\u003cspan style=\"color:rgb(255 255 255 / 1)\">\u003cspan style=\"font-family:Poppins, sans-serif\">\u003cspan style=\"font-weight:400\">© All Rights Reserved\u003c/span>\u003c/span>\u003c/span>","k":"html"},{"s":"[data-ec-el=\"e3310\"]","v":"\u003cspan style=\"font-family:Poppins, sans-serif\">\u003cspan style=\"font-weight:400\">© All Rights Reserved\u003c/span>\u003c/span>","k":"html"}];
+var CSS="";
+var texts=P.filter(function(p){return p.t==="text"});
+var images=P.filter(function(p){return p.t==="image"});
+// Ressurreição de carimbos: quando a hidratação descarta o DOM do servidor
+// (Next App Router re-renderiza a partir do flight payload), os elementos
+// novos NASCEM SEM data-ec-el — todo patch ancorado (css/text-el/image-el)
+// deixa de casar. No primeiro sweep (DOM do servidor intacto) gravamos o
+// caminho estrutural de cada elemento carimbado; depois do wipe, re-achamos
+// o elemento pelo caminho e devolvemos o carimbo.
+var STAMPS={};
+var TRACKED=[];
+(function(){
+  for(var i=0;i<A.length;i++){var s=A[i].s.match(/^\[data-ec-el="([^"]+)"\]$/);
+    if(s&&TRACKED.indexOf(s[1])===-1){TRACKED.push(s[1]);}
+  }
+  var re=/\[data-ec-el="([^"]+)"\]/g;var m;
+  while((m=re.exec(CSS))){if(TRACKED.indexOf(m[1])===-1){TRACKED.push(m[1]);}}
+})();
+function isOurs(el){
+  return el.hasAttribute("data-ec-banner")||el.hasAttribute("data-ec-banner-spacer");
+}
+function pathFor(el){
+  var path=[];var node=el;
+  while(node&&node.parentElement&&node.tagName!=="BODY"){
+    var idx=1;var sib=node.previousElementSibling;
+    while(sib){if(sib.tagName===node.tagName&&!isOurs(sib)){idx++;}sib=sib.previousElementSibling;}
+    path.unshift(node.tagName+"|"+idx);
+    node=node.parentElement;
+  }
+  if(!node||node.tagName!=="BODY"){return null;}
+  return path;
+}
+function findByPath(path){
+  var node=document.body;
+  for(var i=0;i<path.length&&node;i++){
+    var parts=path[i].split("|");var tag=parts[0];var want=+parts[1];
+    var count=0;var child=node.firstElementChild;var hit=null;
+    while(child){
+      if(child.tagName===tag&&!isOurs(child)){count++;if(count===want){hit=child;break;}}
+      child=child.nextElementSibling;
+    }
+    node=hit;
+  }
+  return node;
+}
+function keepStamps(){
+  if(!document.body){return;}
+  for(var i=0;i<TRACKED.length;i++){var st=TRACKED[i];
+    var el=null;
+    try{el=document.querySelector('[data-ec-el="'+st+'"]');}catch(e){continue;}
+    if(el){if(!STAMPS[st]){STAMPS[st]=pathFor(el);}continue;}
+    var path=STAMPS[st];
+    if(!path){continue;}
+    var found=findByPath(path);
+    if(found){found.setAttribute("data-ec-el",st);}
+  }
+}
+function patchString(s){
+  for(var i=0;i<texts.length;i++){var p=texts[i];
+    if(s.indexOf(p.o)!==-1&&s.indexOf(p.v)===-1){s=s.split(p.o).join(p.v);}
+  }
+  return s;
+}
+function fixText(node){
+  var next=patchString(node.nodeValue||"");
+  if(next!==node.nodeValue){node.nodeValue=next;}
+}
+function fixMedia(el){
+  var attrs=["src","srcset","poster"];
+  for(var a=0;a<attrs.length;a++){var cur=el.getAttribute(attrs[a]);
+    if(!cur){continue;}
+    var next=cur;
+    for(var i=0;i<images.length;i++){var p=images[i];
+      if(next.indexOf(p.o)!==-1&&next.indexOf(p.v)===-1){next=next.split(p.o).join(p.v);}
+    }
+    if(next!==cur){el.setAttribute(attrs[a],next);}
+  }
+}
+function fixAnchored(){
+  for(var i=0;i<A.length;i++){var p=A[i];
+    var els;try{els=document.querySelectorAll(p.s);}catch(e){continue;}
+    for(var j=0;j<els.length;j++){var el=els[j];
+      if(p.k==="text"){
+        // mesma representação do servidor: \n vira <br> (em HTML o \n colapsa
+        // em espaço e a quebra que o usuário vê no canvas se perderia). Tudo é
+        // escapado antes, então <br> é o único markup possível.
+        var vh=(p.v||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\r?\n/g,"<br>");
+        var hasEl=false;
+        for(var c=0;c<el.childNodes.length;c++){if(el.childNodes[c].nodeType===1){hasEl=true;break;}}
+        if(vh.indexOf("<br>")>=0){
+          if(el.innerHTML!==vh){el.innerHTML=vh;}
+        }else if(hasEl){
+          // botão com ícone: textContent apagaria o filho. Troca só os nós de
+          // texto, preservando o espaçamento — sem ele o texto cola no ícone.
+          var put=false;
+          for(var c2=0;c2<el.childNodes.length;c2++){
+            var tn=el.childNodes[c2];
+            if(tn.nodeType!==3){continue;}
+            if(put){if(tn.nodeValue!==""){tn.nodeValue="";}continue;}
+            put=true;
+            var lead=(tn.nodeValue.match(/^\s*/)||[""])[0];
+            var tail=(tn.nodeValue.match(/\s*$/)||[""])[0];
+            var want=lead+p.v+tail;
+            if(tn.nodeValue!==want){tn.nodeValue=want;}
+          }
+          if(!put){el.insertBefore(document.createTextNode(p.v),el.firstChild);}
+        }else if(el.textContent!==p.v){el.textContent=p.v;}
+        // Bloco fatiado por LINHA num site que hidrata (Nuxt/Vue): o framework
+        // REPOPULA as linhas irmãs a partir do payload dele, desfazendo a
+        // limpeza feita no servidor — o trecho reaparece duplicado. Aqui a
+        // limpeza é reafirmada a cada sweep, junto com o aria-label (de onde o
+        // componente de split-text do site re-fatia).
+        if((el.getAttribute("class")||"").split(/\s+/).indexOf("line")>=0){
+          var mask=el.parentElement;var grp=mask?mask.parentElement:null;
+          if(grp){
+            var nv=(p.v||"").replace(/\s+/g," ").replace(/^ | $/g,"").toLowerCase();
+            var others=grp.querySelectorAll(".line");
+            for(var q=0;q<others.length;q++){
+              var o=others[q];if(o===el)continue;
+              var ot=(o.textContent||"").replace(/\s+/g," ").replace(/^ | $/g,"").toLowerCase();
+              if(ot!==""&&nv.indexOf(ot)>=0){o.textContent="";}
+            }
+            var hostAria=el.closest?el.closest("[aria-label]"):null;
+            if(hostAria&&hostAria!==el){
+              var av=(p.v||"").replace(/\s+/g," ").replace(/^ | $/g,"");
+              if(hostAria.getAttribute("aria-label")!==av){hostAria.setAttribute("aria-label",av);}
+            }
+          }
+        }
+        continue;
+      }
+      if(p.k==="href"){
+        // só reescreve link que existe: o servidor já aplicou, aqui é o
+        // enforcement contra a hidratação, que devolve o href do payload
+        if(el.hasAttribute("href")&&el.getAttribute("href")!==p.v){
+          el.setAttribute("href",p.v);
+        }
+        continue;
+      }
+      if(p.k==="html"){
+        // conteúdo com markup (palavra pintada). NÃO reescreve container de
+        // split-text já re-fatiado: o split shim é a autoridade lá dentro e
+        // sobrescrever aqui mataria a animação recém-criada.
+        if(el.querySelector(".char")||el.querySelector(".line")){continue;}
+        if(el.innerHTML!==p.v){el.innerHTML=p.v;}
+        continue;
+      }
+      if(el.getAttribute("src")!==p.v){el.setAttribute("src",p.v);}
+      if(el.hasAttribute("data-src")&&el.getAttribute("data-src")!==p.v){el.setAttribute("data-src",p.v);}
+      if(el.hasAttribute("srcset")){el.removeAttribute("srcset");}
+      if(el.hasAttribute("data-srcset")){el.removeAttribute("data-srcset");}
+      if(el.hasAttribute("sizes")){el.removeAttribute("sizes");}
+      var par=el.parentElement;
+      if(par&&par.tagName==="PICTURE"){
+        var srcs=par.querySelectorAll("source");
+        for(var k=0;k<srcs.length;k++){srcs[k].parentNode.removeChild(srcs[k]);}
+      }
+    }
+  }
+}
+function ensureCss(){
+  if(CSS===""){return;}
+  if(document.querySelector("style[data-ec-patch]")){return;}
+  var st=document.createElement("style");
+  st.setAttribute("data-ec-patch","");
+  st.textContent=CSS;
+  (document.head||document.documentElement).appendChild(st);
+}
+function sweep(){
+  keepStamps();
+  ensureCss();
+  var root=document.body||document.documentElement;
+  if(!root){return;}
+  if(texts.length>0){
+    var walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);
+    var node;while((node=walker.nextNode())){fixText(node);}
+    var t=document.querySelector("title");if(t&&t.firstChild){fixText(t.firstChild);}
+  }
+  if(images.length>0){
+    var els=root.querySelectorAll("img,source,video");
+    for(var i=0;i<els.length;i++){fixMedia(els[i]);}
+  }
+  if(A.length>0){fixAnchored();}
+}
+var scheduled=false;
+function schedule(){
+  if(scheduled){return;}
+  scheduled=true;
+  setTimeout(function(){scheduled=false;sweep();},0);
+}
+try{
+  new MutationObserver(schedule).observe(document.documentElement,{
+    subtree:true,childList:true,characterData:true,
+    attributes:true,attributeFilter:["src","srcset","poster","href"]
+  });
+}catch(e){}
+if(document.readyState==="loading"){
+  document.addEventListener("DOMContentLoaded",sweep);
+}else{sweep();}
+})();</script></head>
+
+  <body><div data-ec-banner-spacer="" aria-hidden="true" style="height:50px;flex-shrink:0"></div>
+      <wistia-player media-id="k38ex4l3w0" style="width:100%; height:100%;">
+      </wistia-player>
+
+  <div data-ec-banner=""><div role="alert" style="position:fixed;top:0;left:0;right:0;z-index:2147483647;background:#b91c1c;color:#fff;text-align:center;padding:14px 16px;font-family:system-ui, -apple-system, sans-serif;font-size:15px;font-weight:700;line-height:1.35;letter-spacing:0.2px;box-shadow:0 6px 18px rgb(0 0 0 / 0.35)">DEMONSTRAÇÃO: esta página está em ambiente de preview e não deve ser usada para vendas, pagamentos, compras ou coleta de dados reais. Para operar em produção, utilize um domínio próprio e verificado.</div></div><script data-ec-banner-guard="">(function(){
+var BH=50;
+var BANNER="\u003cdiv data-ec-banner>\u003cdiv role=\"alert\" style=\"position:fixed;top:0;left:0;right:0;z-index:2147483647;background:#b91c1c;color:#fff;text-align:center;padding:14px 16px;font-family:system-ui, -apple-system, sans-serif;font-size:15px;font-weight:700;line-height:1.35;letter-spacing:0.2px;box-shadow:0 6px 18px rgb(0 0 0 / 0.35)\">DEMONSTRAÇÃO: esta página está em ambiente de preview e não deve ser usada para vendas, pagamentos, compras ou coleta de dados reais. Para operar em produção, utilize um domínio próprio e verificado.\u003c/div>\u003c/div>";
+var SPACER="\u003cdiv data-ec-banner-spacer aria-hidden=\"true\" style=\"height:50px;flex-shrink:0\">\u003c/div>";
+function offsetFixed(){
+  var els=document.querySelectorAll('*');
+  for(var i=0;i<els.length;i++){var el=els[i];
+    if(el.getAttribute('data-ec-adj')==='1')continue;
+    if(el.getAttribute('role')==='alert')continue;
+    if(el.getAttribute('aria-hidden')==='true')continue;
+    var cs=window.getComputedStyle(el);
+    if(cs.position!=='fixed')continue;
+    var t=parseFloat(cs.top);
+    if(isNaN(t))continue;
+    el.style.setProperty('top',(t+BH)+'px','important');
+    el.setAttribute('data-ec-adj','1');
+  }
+}
+function ensure(){
+  var body=document.body;
+  if(!body){return;}
+  var inserted=false;
+  if(!document.querySelector('[data-ec-banner-spacer]')){
+    body.insertAdjacentHTML('afterbegin',SPACER);inserted=true;
+  }
+  if(!document.querySelector('[data-ec-banner]')){
+    body.insertAdjacentHTML('beforeend',BANNER);inserted=true;
+  }
+  if(inserted){offsetFixed();}
+}
+var scheduled=false;
+function schedule(){
+  if(scheduled){return;}
+  scheduled=true;
+  setTimeout(function(){scheduled=false;ensure();},0);
+}
+try{
+  new MutationObserver(schedule).observe(document.documentElement,{subtree:true,childList:true});
+}catch(e){}
+if(document.readyState==="loading"){
+  document.addEventListener("DOMContentLoaded",function(){ensure();offsetFixed();});
+}else{ensure();offsetFixed();}
+})();</script><style data-ec-reveal="">[data-ec-revealed]{opacity:1 !important;transform:none !important}</style><script data-ec-reveal="">(function(){
+try{
+  if(!('IntersectionObserver' in window))return;
+  if(!document.body)return;
+  var ATTR='data-ec-revealed';
+  var DELAY=1200;
+
+  // Invisível E declarando transição de entrada = está esperando alguém.
+  // Quem quer ficar escondido não anuncia que vai transicionar para dentro.
+  function esperandoReveal(el){
+    try{
+      var s=getComputedStyle(el);
+      if(s.opacity!=='0')return false;
+      if(s.display==='none'||s.visibility==='hidden')return false;
+      var p=s.transitionProperty;
+      if(!p||p==='none')return false;
+      return p.indexOf('opacity')!==-1||p.indexOf('transform')!==-1||p.indexOf('all')!==-1;
+    }catch(e){return false;}
+  }
+
+  var io=new IntersectionObserver(function(entries){
+    for(var i=0;i<entries.length;i++){
+      if(!entries[i].isIntersecting)continue;
+      (function(el){
+        setTimeout(function(){
+          // o site pode ter revelado nesse meio tempo — aí não mexemos
+          if(esperandoReveal(el)){el.setAttribute(ATTR,'');}
+          try{io.unobserve(el);}catch(e){}
+        },DELAY);
+      })(entries[i].target);
+    }
+  });
+
+  var vistos=typeof WeakSet==='function'?new WeakSet():null;
+  function sweep(){
+    var todos=document.body.querySelectorAll('*');
+    for(var i=0;i<todos.length;i++){
+      var el=todos[i];
+      if(el.hasAttribute(ATTR))continue;
+      if(vistos&&vistos.has(el))continue;
+      if(!esperandoReveal(el))continue;
+      if(vistos)vistos.add(el);
+      try{io.observe(el);}catch(e){}
+    }
+  }
+
+  sweep();
+  // conteúdo que só monta depois (SPA) entra numa segunda passada
+  window.addEventListener('load',function(){setTimeout(sweep,600);});
+  setTimeout(sweep,2500);
+}catch(e){}
+})();</script>
+
+</body></html>
