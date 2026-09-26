@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Thank You — Order Confirmed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            font-family: "Inter", system-ui, sans-serif;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            font-size: 16px;
+            line-height: 1.5;
+            min-height: 100%;
+        }
+        body {
+            min-height: 100%;
+            font-family: "Poppins", Arial, sans-serif;
+            color: #333;
+            background: #f5f2ed;
+            margin: 0;
+            padding: 0;
+        }
+        .tile-strip {
+            display: flex;
+            height: 48px;
+            overflow: hidden;
+            background: #1a2744;
+        }
+        .tile-strip .tile {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.15);
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-right: 1px solid rgba(255, 255, 255, 0.06);
+            background-repeat: repeat;
+            background-size: 24px 24px;
+            background-position: center;
+            opacity: 0.6;
+        }
+        .tile-strip .tile:nth-child(odd) {
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+        .tile-strip .tile.pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2L14 8L20 8L15 12L17 18L12 14L7 18L9 12L4 8L10 8L12 2Z' fill='%23b8860b' opacity='0.15'/%3E%3C/svg%3E");
+        }
+        .success-banner {
+            background: linear-gradient(135deg, #1a2744 0%, #2b3a6f 100%);
+            color: #fff;
+            text-align: center;
+            padding: 14px 20px;
+            font-family: "Noto Serif", serif;
+            font-size: 15px;
+            letter-spacing: 0.3px;
+        }
+        .success-banner strong {
+            color: #f8d788;
+        }
+        .hero {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 24px 40px;
+            text-align: center;
+        }
+        .check-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            background: #4c58bc;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(76, 88, 188, 0.25);
+        }
+        .check-icon svg {
+            width: 40px;
+            height: 40px;
+            fill: #fff;
+        }
+        .hero-title {
+            font-family: "Noto Serif", serif;
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 700;
+            color: #1a2744;
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+        .hero-sub {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.7;
+            max-width: 520px;
+            margin: 0 auto 32px;
+        }
+        .info-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px 28px;
+            border: 1px solid #eee8dd;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            max-width: 500px;
+            margin: 0 auto 32px;
+            text-align: left;
+        }
+        .info-card .step {
+            display: flex;
+            gap: 14px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        }
+        .info-card .step:last-child {
+            border-bottom: none;
+        }
+        .info-card .step-num {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #f0ede7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: #4c58bc;
+        }
+        .info-card .step-text {
+            font-size: 15px;
+            color: #444;
+            line-height: 1.5;
+            padding-top: 4px;
+        }
+        .info-card .step-text strong {
+            color: #1a2744;
+        }
+        .email-highlight {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fffef5;
+            border: 1px solid #e0d8cc;
+            border-radius: 12px;
+            padding: 14px 20px;
+            margin: 0 auto 40px;
+            font-size: 15px;
+            color: #555;
+            max-width: 480px;
+        }
+        .email-highlight svg {
+            width: 22px;
+            height: 22px;
+            fill: #4c58bc;
+            flex-shrink: 0;
+        }
+        .divider {
+            text-align: center;
+            color: #c9b99a;
+            font-size: 24px;
+            letter-spacing: 8px;
+            padding: 8px 0;
+        }
+        .cta-wrap {
+            text-align: center;
+            padding: 0 24px 60px;
+        }
+        .cta-main {
+            display: inline-block;
+            padding: 16px 40px;
+            background: #4c58bc;
+            color: #ffd931;
+            font-family: "Poppins", sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 10000px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 16px rgba(76, 88, 188, 0.3);
+        }
+        .cta-main:hover {
+            background: #374089;
+            color: #ffd931;
+        }
+        footer {
+            background: #0f1a30;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            padding: 32px 24px;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+        footer a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            margin: 0 8px;
+        }
+        footer a:hover {
+            color: rgba(255, 255, 255, 0.85);
+        }
+        @media (max-width: 768px) {
+            .tile-strip {
+                height: 32px;
+            }
+            .tile-strip .tile {
+                font-size: 10px;
+            }
+            .hero {
+                padding: 40px 16px 24px;
+            }
+            .info-card {
+                padding: 24px 18px;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 26px;
+            }
+            .hero-sub {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="success-banner">
+        ✅ Order successfully confirmed!
+    </div>
+
+    <div class="tile-strip">
+        <div class="tile pattern"></div>
+        <div class="tile pattern"></div>
+        <div class="tile pattern"></div>
+        <div class="tile pattern"></div>
+        <div class="tile pattern"></div>
+        <div class="tile pattern"></div>
+        <div class="tile pattern"></div>
+        <div class="tile pattern"></div>
+    </div>
+
+    <section class="hero">
+        <div class="check-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+        </div>
+
+        <h1 class="hero-title">Thank you for your purchase!</h1>
+        <p class="hero-sub">
+            Your order has been confirmed and processed successfully. You will receive your access details in your email shortly.
+        </p>
+
+        <div class="info-card">
+            <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-text">Check your <strong>inbox</strong> or <strong>spam</strong> folder of the email you used at checkout.</div>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-text">Click the access link to <strong>download the PDF</strong> and access the content.</div>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-text">Save the email so you can refer to it whenever you need it.</div>
+            </div>
+        </div>
+
+        <div class="email-highlight">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            The email will be sent from: <strong>support@apotekaria.com</strong>
+        </div>
+    </section>
+
+    <div class="divider">✦</div>
+
+    <div class="cta-wrap">
+        <p style="margin-bottom:16px;color:#777;font-size:15px;">Didn't receive the email? Check your spam folder or contact support.</p>
+        <a href="mailto:support@apotekaria.com" class="cta-main">CONTACT SUPPORT</a>
+    </div>
+
+    <footer>
+        <p>
+            <a href="https://www.remedios-caseiros-de-antigamente.com/Privacidade">Privacy Policy</a>
+            <a href="https://www.remedios-caseiros-de-antigamente.com/Legais">Legal Information</a>
+            <a href="https://www.remedios-caseiros-de-antigamente.com/termos">Terms and Conditions</a>
+        </p>
+        <p style="margin-top:12px;">
+            This website is not part of the Facebook website or Facebook Inc.
+            Furthermore, this site is in no way endorsed by Facebook.
+        </p>
+        <p style="margin-top:12px;">
+            For product support, please contact us at support@apotekaria.com.
+        </p>
+        <p style="margin-top:12px;">© 2026 All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

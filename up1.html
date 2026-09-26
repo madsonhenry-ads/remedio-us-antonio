@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Exclusive Offer — Physical Book Version</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ============ RESET & BASE ============ */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            font-family: "Inter", system-ui, sans-serif;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            font-size: 16px;
+            line-height: 1.5;
+            min-height: 100%;
+        }
+        body {
+            min-height: 100%;
+            font-family: "Poppins", Arial, sans-serif;
+            color: #333;
+            background: #f5f2ed;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ============ TILE STRIP ============ */
+        .tile-strip {
+            display: flex;
+            height: 48px;
+            overflow: hidden;
+            background: #1a2744;
+        }
+        .tile-strip .tile {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.15);
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-right: 1px solid rgba(255, 255, 255, 0.06);
+            background-repeat: repeat;
+            background-size: 24px 24px;
+            background-position: center;
+            opacity: 0.6;
+        }
+        .tile-strip .tile:nth-child(odd) {
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+        .tile-strip .tile.pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2L14 8L20 8L15 12L17 18L12 14L7 18L9 12L4 8L10 8L12 2Z' fill='%23b8860b' opacity='0.15'/%3E%3C/svg%3E");
+        }
+
+        /* ============ URGENCY BANNER ============ */
+        .urgency-banner {
+            background: linear-gradient(135deg, #1a2744 0%, #2b3a6f 100%);
+            color: #fff;
+            text-align: center;
+            padding: 14px 20px;
+            font-family: "Noto Serif", serif;
+            font-size: 15px;
+            letter-spacing: 0.3px;
+        }
+        .urgency-banner strong {
+            color: #f8d788;
+        }
+        .urgency-banner .highlight {
+            display: inline-block;
+            background: rgba(248, 215, 136, 0.15);
+            border: 1px solid rgba(248, 215, 136, 0.3);
+            border-radius: 20px;
+            padding: 2px 14px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #f8d788;
+            margin-left: 6px;
+        }
+
+        /* ============ BLOCO 1 — CONFIRMAÇÃO ============ */
+        .confirm {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 48px 24px 16px;
+            text-align: center;
+        }
+        .confirm .check {
+            width: 76px;
+            height: 76px;
+            margin: 0 auto 20px;
+            background: #2e7d32;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(46, 125, 50, 0.25);
+        }
+        .confirm .check svg {
+            width: 38px;
+            height: 38px;
+            fill: #fff;
+        }
+        .confirm h1 {
+            font-family: "Noto Serif", serif;
+            font-size: clamp(24px, 4vw, 36px);
+            font-weight: 700;
+            color: #1a2744;
+            line-height: 1.2;
+            margin-bottom: 14px;
+        }
+        .confirm p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #555;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+        .confirm p strong {
+            color: #1a2744;
+        }
+
+        /* ============ BLOCO 2 — TRANSFORMAÇÃO ============ */
+        .transform {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 48px 24px 40px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        .transform-text {
+            flex: 1 1 480px;
+        }
+        .transform-mockup {
+            flex: 0 1 380px;
+            text-align: center;
+        }
+        .transform-mockup img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        }
+        .transform h2 {
+            font-family: "Noto Serif", serif;
+            font-size: clamp(26px, 4vw, 42px);
+            font-weight: 700;
+            color: #1a2744;
+            line-height: 1.25;
+            margin-bottom: 16px;
+        }
+        .transform h2 em {
+            font-style: italic;
+            color: #c0392b;
+        }
+        .transform .club-label {
+            display: inline-block;
+            background: #e8e3da;
+            border-radius: 20px;
+            padding: 6px 20px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #8a7a60;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .transform .promise {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #444;
+            margin-top: 16px;
+            max-width: 540px;
+        }
+
+        /* ============ BLOCO 3 — O QUE RECEBE HOJE ============ */
+        .today {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 24px 24px 40px;
+        }
+        .today .section-title {
+            font-family: "Noto Serif", serif;
+            font-size: clamp(24px, 3.5vw, 34px);
+            font-weight: 700;
+            color: #1a2744;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .today-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 28px 28px 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee8dd;
+        }
+        .today-card .today-label {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #d4a017;
+            margin-bottom: 8px;
+        }
+        .today-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .today-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .today-list li:last-child {
+            border-bottom: none;
+        }
+        .today-list li .icon {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            margin-top: 2px;
+            color: #2e7d32;
+        }
+        .today-list li .icon svg {
+            width: 22px;
+            height: 22px;
+            fill: #2e7d32;
+        }
+        .today-list li strong {
+            color: #1a2744;
+        }
+        .today-list li .renewal {
+            display: inline-block;
+            background: #fffef5;
+            border: 1px solid #e0d8cc;
+            border-radius: 8px;
+            padding: 2px 10px;
+            font-weight: 600;
+            color: #1a2744;
+        }
+
+        /* ============ CTA BUTTONS ============ */
+        .cta-wrap {
+            text-align: center;
+            padding: 8px 24px 48px;
+        }
+
+        /* ============ BLOCO 4 — O QUE RECEBE TODOS OS MESES ============ */
+        .monthly {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px 64px;
+        }
+        .monthly .section-title {
+            font-family: "Noto Serif", serif;
+            font-size: clamp(24px, 3.5vw, 34px);
+            font-weight: 700;
+            color: #1a2744;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .monthly-table {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee8dd;
+        }
+        .monthly-head {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            background: #1a2744;
+            color: #fff;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .monthly-head div {
+            padding: 16px 20px;
+        }
+        .monthly-head div:first-child {
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .monthly-row {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .monthly-row:last-child {
+            border-bottom: none;
+        }
+        .monthly-row:nth-child(even) {
+            background: #faf8f4;
+        }
+        .monthly-row div {
+            padding: 16px 20px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        .monthly-row .monthly-left {
+            font-weight: 700;
+            color: #1a2744;
+            border-right: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .monthly-row .monthly-right {
+            color: #555;
+        }
+
+        /* ============ GUARANTEE SECTION ============ */
+        .guarantee {
+            background: #1a2744;
+            color: #fff;
+            padding: 60px 24px;
+            text-align: center;
+        }
+        .guarantee-wrap {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .guarantee .seal {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            border: 3px solid #f8d788;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 800;
+            color: #f8d788;
+        }
+        .guarantee h2 {
+            font-family: "Noto Serif", serif;
+            font-size: clamp(24px, 3vw, 32px);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .guarantee p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background: #0f1a30;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            padding: 32px 24px;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+        footer a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            margin: 0 8px;
+        }
+        footer a:hover {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* ============ DECORATIVE DIVIDER ============ */
+        .divider {
+            text-align: center;
+            color: #c9b99a;
+            font-size: 24px;
+            letter-spacing: 8px;
+            padding: 8px 0;
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 768px) {
+            .transform {
+                padding: 32px 16px 24px;
+                gap: 24px;
+                flex-direction: column;
+            }
+            .transform-mockup {
+                flex: 0 1 280px;
+            }
+            .tile-strip {
+                height: 32px;
+            }
+            .tile-strip .tile {
+                font-size: 10px;
+            }
+            .confirm {
+                padding: 36px 16px 12px;
+            }
+            .monthly-head div,
+            .monthly-row div {
+                padding: 12px 14px;
+                font-size: 14px;
+            }
+        }
+        @media (max-width: 560px) {
+            .monthly-head {
+                display: none;
+            }
+            .monthly-row {
+                grid-template-columns: 1fr;
+            }
+            .monthly-row .monthly-left {
+                border-right: none;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                padding-bottom: 6px;
+            }
+            .monthly-row .monthly-right {
+                padding-top: 6px;
+            }
+        }
+        @media (max-width: 480px) {
+            .urgency-banner {
+                font-size: 13px;
+                padding: 12px 14px;
+            }
+            .confirm h1 {
+                font-size: 24px;
+            }
+            .transform h2 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ======== URGENCY BANNER ======== -->
+    <div class="urgency-banner">
+        📦 Because you bought the digital version: the <strong>physical book</strong> is just 9.90 € with free shipping
+        <span class="highlight" id="countdown">30:00</span>
+    </div>
+
+    <!-- ======== TILE STRIP (azulejo) ======== -->
+    <div class="tile-strip">
+        <div class="tile pattern"></div>
+        <div class="tile pattern"></div>
+        <div class="tile pattern"></div>
+        <div class="tile pattern"></div>
+        <div class="tile pattern"></div>
+        <div class="tile pattern"></div>
+        <div class="tile pattern"></div>
+        <div class="tile pattern"></div>
+    </div>
+
+    <!-- ======== BLOCO 1 — CONFIRMAÇÃO DA COMPRA ======== -->
+    <section class="confirm">
+        <div class="check">
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+        </div>
+        <h1>Your purchase has been confirmed.</h1>
+        <p>
+            You have already purchased <strong>Os Remédios Caseiros de Antigamente</strong> in the digital version. Before you finish,
+            you have access to an <strong>exclusive offer</strong> reserved only for those who have just bought the guide:
+            also take the <strong>physical book</strong> version, with free shipping across Portugal.
+        </p>
+    </section>
+
+    <!-- ======== BLOCO 2 — DOR + SOLUÇÃO ======== -->
+    <section class="transform">
+        <div class="transform-text">
+            <span class="club-label">Physical Book Version</span>
+            <h2>Prefer to have the guide <em>printed</em> in your hands?</h2>
+            <p class="promise">
+                Many people save the digital catalog and never open it again. The physical book stays on the kitchen shelf,
+                in plain sight, ready to consult while you cook or prepare a remedy. The book's regular price is
+                <strong>37 € + 9.90 € shipping</strong> — but, because you just bought the digital version, today
+                it's only <strong>9.90 €</strong>: you get the physical book and shipping is <strong>free across
+                all of Portugal</strong>. It's the cheapest way to have the guide on paper — and it only appears to existing customers.
+            </p>
+        </div>
+        <div class="transform-mockup">
+            <img src="https://pt.getrecipe.space/images/1775473332956_poza.webp" alt="Livro físico de Os Remédios Caseiros de Antigamente" loading="lazy">
+        </div>
+    </section>
+
+    <!-- ======== BLOCO 3 — O QUE RECEBE COM ESTA OFERTA ======== -->
+    <section class="today">
+        <h2 class="section-title">What you receive</h2>
+        <div class="today-card">
+            <div class="today-label">📦 The paper version of your guide</div>
+            <ul class="today-list">
+                <li>
+                    <span class="icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></span>
+                    <span><strong>The complete physical book</strong> of Os Remédios Caseiros de Antigamente</span>
+                </li>
+                <li>
+                    <span class="icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></span>
+                    <span><strong>Full-color printing</strong> on quality paper, ready to browse in the kitchen</span>
+                </li>
+                <li>
+                    <span class="icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></span>
+                    <span><strong>Free shipping</strong> — delivery across all of Portugal, at no extra cost</span>
+                </li>
+                <li>
+                    <span class="icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></span>
+                    <span><strong>Permanent access to the digital catalog</strong> — recipes by category with a search system, you keep both versions</span>
+                </li>
+                <li>
+                    <span class="icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></span>
+                    <span><strong>Just 9.90 €</strong> — instead of the regular 37 € + 9.90 € shipping price</span>
+                </li>
+                <li>
+                    <span class="icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></span>
+                    <span><strong>Fast delivery</strong> — we ship within 24h after order confirmation</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ======== CTA ======== -->
+    <div class="cta-wrap">
+        <!-- HOTMART - Sales Funnel Widget (inclui preço, aceitar e recusar) -->
+        <div id="hotmart-sales-funnel"></div>
+        <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+        <script>
+        checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
+        </script>
+        <!-- HOTMART - Sales Funnel Widget -->
+    </div>
+
+    <!-- ======== BLOCO 6 — GARANTIA ======== -->
+    <section class="guarantee">
+        <div class="guarantee-wrap">
+            <div class="seal">✓</div>
+            <h2>Try it risk-free</h2>
+            <p>
+                You have 30 days to return the book if you decide it's not for you. Request a refund
+                according to the conditions presented before purchase. One-time payment, no subscription:
+                you get the physical book with free shipping and access to the digital catalog stays with you forever.
+            </p>
+        </div>
+    </section>
+
+    <!-- ======== FOOTER ======== -->
+    <footer>
+        <p>
+            <a href="https://www.remedios-caseiros-de-antigamente.com/Privacidade">Privacy Policy</a>
+            <a href="https://www.remedios-caseiros-de-antigamente.com/Legais">Legal Information</a>
+            <a href="https://www.remedios-caseiros-de-antigamente.com/termos">Terms and Conditions</a>
+        </p>
+        <p style="margin-top:12px;">
+            This website is not part of the Facebook website or Facebook Inc.
+            Furthermore, this site is in no way endorsed by Facebook.
+        </p>
+        <p style="margin-top:12px;">
+            This material is for educational and household organization purposes. It does not replace medical
+            advice, diagnosis, treatment, or prescribed medication.
+        </p>
+        <p style="margin-top:12px;">
+            For product support, please contact us at support@apotekaria.com.
+        </p>
+        <p style="margin-top:12px;">© 2026 All rights reserved.</p>
+    </footer>
+
+    <script>
+        (function () {
+            // Countdown de 30 minutos a partir do carregamento da página
+            var el = document.getElementById('countdown');
+            if (!el) return;
+            var total = 30 * 60;
+            function tick() {
+                var m = Math.floor(total / 60);
+                var s = total % 60;
+                el.textContent = (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+                if (total > 0) {
+                    total--;
+                    setTimeout(tick, 1000);
+                } else {
+                    el.textContent = 'Expired';
+                }
+            }
+            tick();
+        })();
+    </script>
+
+</body>
+</html>

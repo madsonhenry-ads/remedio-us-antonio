@@ -7038,6 +7038,18 @@ h3.gutter-bottom-14 {
 
 
 
+/* Corrige espaço em branco acima do vídeo VTurb (causa real: ::before do Bootstrap
+   que duplica a altura 16:9 já reservada pelo vturb-player-placeholder) */
+#blank-3-copy .embed-responsive-16by9::before {
+  content: none !important;
+  display: none !important;
+  padding-top: 0 !important;
+}
+#blank-3-copy .embed-responsive {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0;
+}
 </style><script id="pageDataScript">var pageData = {"pageViewReferenceId":"e629fcbd-ef28-4db9-9f73-20a7d11e34fa","funnelReferenceId":"fa9a0bd3-ea29-4514-9b3a-bfb8a93bcd72"};</script><title>The Forgotten Home Apothecary</title><!-- Google Tag Manager --><script class="54d5e604-3377-44c5-8a87-505816eecc13-hr global-script">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=

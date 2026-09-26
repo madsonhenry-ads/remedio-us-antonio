@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Exclusive Offer — Traditional Recipes Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ============ RESET & BASE ============ */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            font-family: "Inter", system-ui, sans-serif;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            font-size: 16px;
+            line-height: 1.5;
+            min-height: 100%;
+        }
+        body {
+            min-height: 100%;
+            font-family: "Poppins", Arial, sans-serif;
+            color: #333;
+            background: #f5f2ed;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ============ TILE STRIP ============ */
+        .tile-strip {
+            display: flex;
+            height: 48px;
+            overflow: hidden;
+            background: #1a2744;
+        }
+        .tile-strip .tile {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.15);
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-right: 1px solid rgba(255, 255, 255, 0.06);
+            background-repeat: repeat;
+            background-size: 24px 24px;
+            background-position: center;
+            opacity: 0.6;
+        }
+        .tile-strip .tile:nth-child(odd) {
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+        .tile-strip .tile.pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2L14 8L20 8L15 12L17 18L12 14L7 18L9 12L4 8L10 8L12 2Z' fill='%23b8860b' opacity='0.15'/%3E%3C/svg%3E");
+        }
+
+        /* ============ URGENCY BANNER ============ */
+        .urgency-banner {
+            background: linear-gradient(135deg, #1a2744 0%, #2b3a6f 100%);
+            color: #fff;
+            text-align: center;
+            padding: 14px 20px;
+            font-family: "Noto Serif", serif;
+            font-size: 15px;
+            letter-spacing: 0.3px;
+        }
+        .urgency-banner strong {
+            color: #f8d788;
+        }
+        .urgency-banner .highlight {
+            display: inline-block;
+            background: rgba(248, 215, 136, 0.15);
+            border: 1px solid rgba(248, 215, 136, 0.3);
+            border-radius: 20px;
+            padding: 2px 14px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #f8d788;
+            margin-left: 6px;
+        }
+
+        /* ============ BLOCO 1 — CONFIRMAÇÃO ============ */
+        .confirm {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 48px 24px 16px;
+            text-align: center;
+        }
+        .confirm .check {
+            width: 76px;
+            height: 76px;
+            margin: 0 auto 20px;
+            background: #2e7d32;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(46, 125, 50, 0.25);
+        }
+        .confirm .check svg {
+            width: 38px;
+            height: 38px;
+            fill: #fff;
+        }
+        .confirm h1 {
+            font-family: "Noto Serif", serif;
+            font-size: clamp(24px, 4vw, 36px);
+            font-weight: 700;
+            color: #1a2744;
+            line-height: 1.2;
+            margin-bottom: 14px;
+        }
+        .confirm p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #555;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+        .confirm p strong {
+            color: #1a2744;
+        }
+
+        /* ============ BLOCO 2 — TRANSFORMAÇÃO ============ */
+        .transform {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 48px 24px 40px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        .transform-text {
+            flex: 1 1 480px;
+        }
+        .transform-mockup {
+            flex: 0 1 380px;
+            text-align: center;
+        }
+        .transform-mockup img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        }
+        .transform h2 {
+            font-family: "Noto Serif", serif;
+            font-size: clamp(26px, 4vw, 42px);
+            font-weight: 700;
+            color: #1a2744;
+            line-height: 1.25;
+            margin-bottom: 16px;
+        }
+        .transform h2 em {
+            font-style: italic;
+            color: #c0392b;
+        }
+        .transform .club-label {
+            display: inline-block;
+            background: #e8e3da;
+            border-radius: 20px;
+            padding: 6px 20px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #8a7a60;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .transform .promise {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #444;
+            margin-top: 16px;
+            max-width: 540px;
+        }
+
+        /* ============ BLOCO 3 — O QUE RECEBE ============ */
+        .today {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 24px 24px 40px;
+        }
+        .today .section-title {
+            font-family: "Noto Serif", serif;
+            font-size: clamp(24px, 3.5vw, 34px);
+            font-weight: 700;
+            color: #1a2744;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .today-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 28px 28px 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee8dd;
+        }
+        .today-card .today-label {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #d4a017;
+            margin-bottom: 8px;
+        }
+        .today-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .today-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .today-list li:last-child {
+            border-bottom: none;
+        }
+        .today-list li .icon {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            margin-top: 2px;
+            color: #2e7d32;
+        }
+        .today-list li .icon svg {
+            width: 22px;
+            height: 22px;
+            fill: #2e7d32;
+        }
+        .today-list li strong {
+            color: #1a2744;
+        }
+
+        /* ============ PRICE BLOCK ============ */
+        .price-block {
+            max-width: 560px;
+            margin: 0 auto 8px;
+            text-align: center;
+        }
+        .price-card {
+            background: linear-gradient(135deg, #1a2744 0%, #2b3a6f 100%);
+            color: #fff;
+            border-radius: 16px;
+            padding: 28px 24px;
+            box-shadow: 0 8px 30px rgba(26, 39, 68, 0.25);
+        }
+        .price-card .price-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 8px;
+        }
+        .price-card .price-value {
+            font-family: "Noto Serif", serif;
+            font-size: clamp(40px, 8vw, 58px);
+            font-weight: 700;
+            color: #f8d788;
+            line-height: 1;
+        }
+        .price-card .price-value span {
+            font-size: 22px;
+            color: #fff;
+        }
+        .price-card .price-note {
+            font-size: 14px;
+            color: rgba(255,255,255,0.85);
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+        .price-card .price-compare {
+            display: inline-block;
+            margin-top: 12px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            padding: 4px 14px;
+            font-size: 13px;
+            color: #f8d788;
+            font-weight: 600;
+        }
+
+        /* ============ CTA BUTTONS ============ */
+        .cta-wrap {
+            text-align: center;
+            padding: 8px 24px 48px;
+        }
+
+        /* ============ GUARANTEE SECTION ============ */
+        .guarantee {
+            background: #1a2744;
+            color: #fff;
+            padding: 60px 24px;
+            text-align: center;
+        }
+        .guarantee-wrap {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .guarantee .seal {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            border: 3px solid #f8d788;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 800;
+            color: #f8d788;
+        }
+        .guarantee h2 {
+            font-family: "Noto Serif", serif;
+            font-size: clamp(24px, 3vw, 32px);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .guarantee p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background: #0f1a30;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            padding: 32px 24px;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+        footer a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            margin: 0 8px;
+        }
+        footer a:hover {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 768px) {
+            .transform {
+                padding: 32px 16px 24px;
+                gap: 24px;
+                flex-direction: column;
+            }
+            .transform-mockup {
+                flex: 0 1 280px;
+            }
+            .tile-strip {
+                height: 32px;
+            }
+            .tile-strip .tile {
+                font-size: 10px;
+            }
+            .confirm {
+                padding: 36px 16px 12px;
+            }
+        }
+        @media (max-width: 480px) {
+            .urgency-banner {
+                font-size: 13px;
+                padding: 12px 14px;
+            }
+            .confirm h1 {
+                font-size: 24px;
+            }
+            .transform h2 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ======== URGENCY BANNER ======== -->
+    <div class="urgency-banner">
+        🔥 Today's exclusive offer: join the <strong>Traditional Recipes Club</strong> for just 4.90 €/month
+        <span class="highlight" id="countdown">30:00</span>
+    </div>
+
+    <!-- ======== TILE STRIP (azulejo) ======== -->
+    <div class="tile-strip">
+        <div class="tile pattern"></div>
+        <div class="tile pattern"></div>
+        <div class="tile pattern"></div>
+        <div class="tile pattern"></div>
+        <div class="tile pattern"></div>
+        <div class="tile pattern"></div>
+        <div class="tile pattern"></div>
+        <div class="tile pattern"></div>
+    </div>
+
+    <!-- ======== BLOCO 1 — CONFIRMAÇÃO DA COMPRA ======== -->
+    <section class="confirm">
+        <div class="check">
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+        </div>
+        <h1>Your purchase has been confirmed.</h1>
+        <p>
+            You already have the <strong>250 recipes</strong> from the digital catalog of Os Remédios Caseiros de Antigamente.
+            But traditional recipes don't end there — and some people want to go much further. That's why we created
+            an <strong>exclusive offer</strong> reserved for those who have just bought the guide: the
+            <strong>Traditional Recipes Club</strong>.
+        </p>
+    </section>
+
+    <!-- ======== BLOCO 2 — DOR + SOLUÇÃO ======== -->
+    <section class="transform">
+        <div class="transform-text">
+            <span class="club-label">Traditional Recipes Club</span>
+            <h2>Don't stop at the <em>250 recipes</em>.</h2>
+            <p class="promise">
+                The digital catalog is just a starting point. Club members receive <strong>every day</strong>
+                video lessons on how to prepare and explain new recipes, a digital guide to plants and herbs,
+                seasonal content, practical materials, and checklists. And you also get <strong>exclusive access to
+                the community</strong>, to connect and exchange recipes and tips with other members. For just
+                <strong>4.90 € per month</strong> — less than a coffee — you keep learning, every week.
+            </p>
+        </div>
+        <div class="transform-mockup">
+            <img src="https://lh3.googleusercontent.com/6xDH6u1w8UyQX_MAvYoz1dWT-xGkVzYwn49CFUMSkp2Q9L-7SUUpIvwzxqGMCYroINXUl3EkEgm_7LwrhNfxqN3sgb8R6H_7u2k=w532" alt="Clube das Receitas Tradicionais" loading="lazy">
+        </div>
+    </section>
+
+    <!-- ======== BLOCO 3 — O QUE RECEBE ======== -->
+    <section class="today">
+        <h2 class="section-title">What you get in the Club</h2>
+        <div class="today-card">
+            <div class="today-label">🎁 Daily and ongoing access while you're a member</div>
+            <ul class="today-list">
+                <li>
+                    <span class="icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></span>
+                    <span><strong>Video lessons every day</strong> — preparation and explanation of new recipes, step by step</span>
+                </li>
+                <li>
+                    <span class="icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></span>
+                    <span><strong>Digital guide to plants and herbs</strong> — identify and use the right ingredients</span>
+                </li>
+                <li>
+                    <span class="icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></span>
+                    <span><strong>Seasonal content</strong> — recipes and tips adapted to each time of year</span>
+                </li>
+                <li>
+                    <span class="icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></span>
+                    <span><strong>Practical materials and checklists</strong> — apply them without wasting time organizing</span>
+                </li>
+                <li>
+                    <span class="icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></span>
+                    <span><strong>Exclusive access to the community</strong> — exchange recipes and tips with other members</span>
+                </li>
+                <li>
+                    <span class="icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></span>
+                    <span><strong>New recipes every week</strong> — the collection keeps growing and never goes stale</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ======== BLOCO 4 — PREÇO ======== -->
+    <section class="price-block">
+        <div class="price-card">
+            <div class="price-label">Today only for those who bought the guide</div>
+            <div class="price-value">4,90 €<span> /mês</span></div>
+            <div class="price-note">Less than a coffee per month for new recipes every day and community access.</div>
+            <div class="price-compare">Cancel anytime — no commitment</div>
+        </div>
+    </section>
+
+    <!-- ======== CTA ======== -->
+    <div class="cta-wrap">
+        <!-- HOTMART - Sales Funnel Widget (inclui preço, aceitar e recusar) -->
+        <div id="hotmart-sales-funnel"></div>
+        <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+        <script>
+        checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
+        </script>
+        <!-- HOTMART - Sales Funnel Widget -->
+    </div>
+
+    <!-- ======== BLOCO 6 — GARANTIA ======== -->
+    <section class="guarantee">
+        <div class="guarantee-wrap">
+            <div class="seal">✓</div>
+            <h2>Try it risk-free</h2>
+            <p>
+                Join today and explore the Club for 7 days. If you decide it's not for you, cancel anytime
+                and you won't pay another monthly fee — no commitment, no paperwork. The guide you already
+                bought stays yours forever; the Club remains at your disposal while you're a member.
+            </p>
+        </div>
+    </section>
+
+    <!-- ======== FOOTER ======== -->
+    <footer>
+        <p>
+            <a href="https://www.remedios-caseiros-de-antigamente.com/Privacidade">Privacy Policy</a>
+            <a href="https://www.remedios-caseiros-de-antigamente.com/Legais">Legal Information</a>
+            <a href="https://www.remedios-caseiros-de-antigamente.com/termos">Terms and Conditions</a>
+        </p>
+        <p style="margin-top:12px;">
+            This website is not part of the Facebook website or Facebook Inc.
+            Furthermore, this site is in no way endorsed by Facebook.
+        </p>
+        <p style="margin-top:12px;">
+            This material is for educational and household organization purposes. It does not replace medical
+            advice, diagnosis, treatment, or prescribed medication.
+        </p>
+        <p style="margin-top:12px;">
+            For product support, please contact us at support@apotekaria.com.
+        </p>
+        <p style="margin-top:12px;">© 2026 All rights reserved.</p>
+    </footer>
+
+    <script>
+        (function () {
+            // Countdown de 30 minutos a partir do carregamento da página
+            var el = document.getElementById('countdown');
+            if (!el) return;
+            var total = 30 * 60;
+            function tick() {
+                var m = Math.floor(total / 60);
+                var s = total % 60;
+                el.textContent = (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+                if (total > 0) {
+                    total--;
+                    setTimeout(tick, 1000);
+                } else {
+                    el.textContent = 'Expired';
+                }
+            }
+            tick();
+        })();
+    </script>
+
+</body>
+</html>
